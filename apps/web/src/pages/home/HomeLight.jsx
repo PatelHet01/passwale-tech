@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { useThemeStore } from '@/stores/themeStore';
 import { useState, useEffect } from 'react';
 import api from '@/services/api';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
 
 export default function HomeLight() {
   const { setTheme, theme } = useThemeStore();
@@ -29,16 +32,19 @@ export default function HomeLight() {
           <Link className="font-label-bold text-label-bold text-on-primary-container hover:bg-secondary-container hover:text-on-secondary-container transition-all px-2 py-1 uppercase" to="/dashboard/tickets">Vault</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <button
+          <Button
             onClick={toggleTheme}
-            className="hidden md:flex items-center gap-2 border-2 border-primary bg-surface-container px-3 py-2 font-label-bold text-label-bold neo-shadow neo-button-press"
+            variant="secondary"
+            className="hidden md:flex items-center gap-2 px-3 py-2"
             title="Switch to dark mode"
           >
             <span className="material-symbols-outlined text-sm">dark_mode</span>
-          </button>
-          <Link to="/login" className="hidden md:flex items-center gap-2 border-2 border-primary bg-secondary-container px-4 py-2 font-label-bold text-label-bold neo-shadow neo-button-press uppercase">
-            <span className="material-symbols-outlined text-sm">confirmation_number</span>
-            My Passes
+          </Button>
+          <Link to="/login" className="hidden md:flex items-center">
+            <Button variant="primary" className="flex items-center gap-2 px-4 py-2 text-sm">
+              <span className="material-symbols-outlined text-sm">confirmation_number</span>
+              My Passes
+            </Button>
           </Link>
           <Link to="/dashboard" className="w-10 h-10 border-2 border-primary neo-shadow-sm overflow-hidden bg-primary cursor-pointer">
             <div className="w-full h-full flex items-center justify-center">
@@ -104,8 +110,10 @@ export default function HomeLight() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <Link to={events[0] ? `/e/${events[0].slug}` : '/events'} className="bg-primary text-on-primary border-4 border-secondary-container px-8 py-4 font-display-lg text-headline-md neo-shadow-lg neo-button-press uppercase">
-                  ENTER THE VAULT
+                <Link to={events[0] ? `/e/${events[0].slug}` : '/events'}>
+                  <Button variant="primary" className="px-8 py-4 font-display-lg text-headline-md neo-shadow-lg">
+                    ENTER THE VAULT
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -147,7 +155,7 @@ export default function HomeLight() {
                         ? <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={ev.coverImage} alt={ev.title} />
                         : <div className="w-full h-full bg-surface-container-high" />
                       }
-                      <span className="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase tracking-tighter">VOL. 0{i+1}</span>
+                      <Badge variant="default" className="absolute top-2 left-2 text-[10px] px-2 py-1">VOL. 0{i+1}</Badge>
                     </div>
                     <div className="p-4 flex flex-col justify-between flex-grow">
                       <div>
@@ -196,8 +204,10 @@ export default function HomeLight() {
                 <div className="relative z-10">
                   <h3 className="font-display-lg text-headline-lg text-white uppercase leading-none mb-2">Build Your Scene</h3>
                   <p className="text-white font-bold max-w-md">Connect your Spotify and Instagram to unlock exclusive legacy drops based on your cultural fingerprint.</p>
-                  <Link to="/dashboard/profile" className="mt-4 bg-primary text-white border-2 border-white px-6 py-2 font-bold neo-shadow neo-button-press uppercase inline-block">
-                    Connect Identity
+                  <Link to="/dashboard/profile" className="mt-4 inline-block">
+                    <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary px-6 py-2">
+                      Connect Identity
+                    </Button>
                   </Link>
                 </div>
                 <span className="material-symbols-outlined text-[120px] text-primary/20 absolute -right-4 -bottom-4 select-none">fingerprint</span>
