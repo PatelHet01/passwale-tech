@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASSWALE | Event Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;700&amp;family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#121414",
+                    "on-tertiary": "#333025",
+                    "on-tertiary-fixed-variant": "#4a473b",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#2f3131",
+                    "on-background": "#e2e2e2",
+                    "on-surface": "#e2e2e2",
+                    "surface-variant": "#333535",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-fixed": "#e9e2d2",
+                    "surface-container-highest": "#333535",
+                    "surface-container": "#1e2020",
+                    "tertiary-fixed-dim": "#ccc6b6",
+                    "outline-variant": "#45464e",
+                    "secondary-container": "#eec200",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#515d84",
+                    "surface-bright": "#37393a",
+                    "on-primary": "#222f53",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#eec200",
+                    "on-primary-container": "#7784ad",
+                    "primary-fixed-dim": "#b9c5f2",
+                    "surface-container-high": "#282a2b",
+                    "on-surface-variant": "#c6c6cf",
+                    "on-tertiary-container": "#898577",
+                    "tertiary-container": "#1f1d13",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#645000",
+                    "primary-fixed": "#dbe1ff",
+                    "secondary-fixed": "#ffe083",
+                    "surface-dim": "#121414",
+                    "primary": "#b9c5f2",
+                    "on-secondary": "#3c2f00",
+                    "secondary": "#ffe083",
+                    "tertiary": "#ccc6b6",
+                    "on-primary-fixed": "#0b1a3d",
+                    "on-tertiary-fixed": "#1e1c12",
+                    "outline": "#8f9099",
+                    "on-primary-fixed-variant": "#39456b",
+                    "background": "#121414",
+                    "surface-tint": "#b9c5f2",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-container": "#0d1b3e",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#231b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "grid-gutter": "16px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "xl": "40px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "grid-margin": "20px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Anton"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "label-mono": ["Space Mono"],
+                    "cta": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "display-xl": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "cta": ["16px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .diagonal-bg {
+            background-image: repeating-linear-gradient(15deg, transparent, transparent 40px, rgba(185, 197, 242, 0.03) 40px, rgba(185, 197, 242, 0.03) 80px);
+        }
+        .neomorphic-well {
+            background: #121414;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6), inset -2px -2px 8px rgba(255, 255, 255, 0.05);
+        }
+        .clay-button {
+            box-shadow: 0 4px 0px 0px rgba(0,0,0,1), 4px 6px 12px rgba(250, 204, 21, 0.3);
+            transition: all 0.2s ease;
+        }
+        .clay-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px 0px rgba(0,0,0,1), 2px 3px 6px rgba(250, 204, 21, 0.3);
+        }
+        .clay-icon-shadow {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden diagonal-bg min-h-screen pb-32">
+<!-- Top AppBar (Brand Anchor) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-on-surface/10 flex justify-between items-center px-grid-margin py-md shadow-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary active:scale-95 duration-200 cursor-pointer">menu</span>
+<h1 class="font-display-xl text-headline-md md:text-display-xl text-secondary uppercase tracking-tighter">PASSWALE</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 active:scale-95 duration-200 cursor-pointer">
+<img alt="Rohan Sharma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFE3VCBtqwjkYO7IM2wPFkbAjmFVrFPyvPxmWKiGzEb8UGdnRPovwtuMquXdotR5up71CMWMvZnLTzgqhoWy6HUaQ6CG6zyb-vPQb5xIYXQE4gIzkbnonJxib0detupbFWqQabecPYq0uDljrH1y984L12E5RRhPQYW7trIV6jpcCg-G83fpe1ePROlBt17x_TgWk0iwp3wVxds2HvFbeIC6zpa-jH1izzHj4qs7MqLWDeTzmbI0mVOKVdEyRR2EtdmP-FErltq-c"/>
+</div>
+</header>
+<main class="pt-24 px-grid-margin">
+<!-- Sticky Glass Search Bar -->
+<section class="sticky top-20 z-40 py-md">
+<div class="neomorphic-well rounded-xl flex items-center p-md gap-md border border-white/5 backdrop-blur-md">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder:text-outline-variant" placeholder="Search techno, garba, or secret raves..." type="text"/>
+<span class="material-symbols-outlined text-secondary active:scale-90 transition-transform cursor-pointer">tune</span>
+</div>
+</section>
+<!-- Scene Chips (Horizontal Scroll) -->
+<section class="mt-md">
+<div class="flex overflow-x-auto gap-md custom-scrollbar py-sm">
+<!-- TECHNO -->
+<button class="flex-none flex items-center gap-sm bg-primary-container border border-primary/30 px-lg py-sm rounded-full active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary clay-icon-shadow" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-cta text-cta text-primary uppercase">TECHNO</span>
+</button>
+<!-- GARBA -->
+<button class="flex-none flex items-center gap-sm bg-secondary-container/20 border border-secondary/30 px-lg py-sm rounded-full opacity-60 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brightness_7</span>
+<span class="font-cta text-cta text-secondary uppercase">GARBA</span>
+</button>
+<!-- UNDERGROUND -->
+<button class="flex-none flex items-center gap-sm bg-surface-variant border border-on-surface-variant/30 px-lg py-sm rounded-full opacity-60 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+<span class="font-cta text-cta text-on-surface-variant uppercase">SECRET</span>
+</button>
+<!-- WORKSHOPS -->
+<button class="flex-none flex items-center gap-sm bg-surface-variant border border-on-surface-variant/30 px-lg py-sm rounded-full opacity-60 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">brush</span>
+<span class="font-cta text-cta text-on-surface-variant uppercase">CREATIVE</span>
+</button>
+<!-- CONCERTS -->
+<button class="flex-none flex items-center gap-sm bg-surface-variant border border-on-surface-variant/30 px-lg py-sm rounded-full opacity-60 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">speaker_group</span>
+<span class="font-cta text-cta text-on-surface-variant uppercase">LIVE</span>
+</button>
+</div>
+</section>
+<!-- Vertical Grid of 3:4 Event Posters -->
+<section class="mt-xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-grid-gutter mb-12">
+<!-- Poster 1: Techno -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border-l-4 border-primary group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all" data-alt="A gritty underground techno rave event poster with neon cyan and deep navy lighting. The scene shows a crowd dancing in a foggy industrial warehouse with strobe lights and professional DJ equipment. The overall aesthetic is raw, kinetic, and youthful, matching a premium dark-mode Indian live event app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsuUT8D9C7KHmViNdpgk22sOV3VBNBsXnBUt4VxmlpdDBx8Cx0LQwEe9ql8BT_roHvu9Mqx012zIyv-OND2MY5P0UFkg1ReZ8fe-pQ0HhCp75_LRtp_wpyU7CXHK918B6W6T0PVkEkG-ubVCoerxXJyH4cOZnBlZPBcVdSveaiDOT1SXI3B3zVSRSacP4Q_gMrwXSu_i7c4GFhF9dhGgHtiJS2QuX5fRdHaP7yjpbfZ1Xxk2ihuda1PN5tjvTiqKul4u3-wuELWc"/>
+<div class="absolute top-md right-md bg-error px-md py-xs rounded-full flex items-center gap-xs shadow-lg">
+<span class="text-on-error font-cta text-[12px] uppercase">🔥 23 left</span>
+</div>
+<div class="absolute bottom-0 w-full p-md bg-surface/60 backdrop-blur-md border-t border-white/10">
+<p class="font-label-mono text-[10px] text-primary uppercase tracking-widest mb-xs">Bunker 03 // BLR</p>
+<h3 class="font-headline-md text-[18px] text-white leading-tight uppercase mb-sm">NEON VOID: ABX-7</h3>
+<div class="flex justify-between items-center">
+<span class="font-cta text-secondary text-md">₹1,299</span>
+<span class="material-symbols-outlined text-white/50 text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Poster 2: Garba -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border-l-4 border-secondary group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all" data-alt="A high-energy traditional Garba festival scene at night with vibrant yellow and orange stage lighting. Dancers in ornate traditional Indian attire are captured in motion, creating a colorful blur. The composition is modern and artistic, emphasizing the cultural fusion and youthful energy of the Indian festival scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIYCdBf17y_5VGEDRWc7n6jvegg-8dB0XOTZsxFU3ZqyZCKTJebspbxpjfiAURfN9tf59Uq1mrlB0-B9HFwOWTwgE5D32CpGtrZ8yBRD__dq9EHHb1-z7lBs8x7SCfijXIpeUzTQxI9JxDIKFMtFZI9pC_bt4S9CMcM1mVe5m75Owipy3-sepcdNgN11StFscmPTJcd79ctrZYNw5tP4eTNQzlPMxTXSlsiAAUEmubWr8_KsFX9AvBPzhyc3oUNLXEJsIRPFStIR0"/>
+<div class="absolute top-md right-md bg-surface/80 px-md py-xs rounded-full flex items-center gap-xs shadow-lg">
+<span class="text-on-surface font-cta text-[12px] uppercase">Sold 80%</span>
+</div>
+<div class="absolute bottom-0 w-full p-md bg-surface/60 backdrop-blur-md border-t border-white/10">
+<p class="font-label-mono text-[10px] text-secondary uppercase tracking-widest mb-xs">Dandia Heights // AMD</p>
+<h3 class="font-headline-md text-[18px] text-white leading-tight uppercase mb-sm">URBAN GARBA NIGHTS</h3>
+<div class="flex justify-between items-center">
+<span class="font-cta text-secondary text-md">₹499</span>
+<span class="material-symbols-outlined text-white/50 text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Poster 3: Secret Rave -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border-l-4 border-on-surface-variant group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all" data-alt="A mysterious forest rave at dusk with hidden purple and pink neon tube lights among the trees. The atmosphere is ethereal and secret, featuring a small group of stylish attendees. The style is maximalist and layered, blending nature with futuristic electronic music vibes, perfectly suited for a premium event discovery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKN3dHAQo9F0RlaQaZ2-f-icMqx7r-ZmEopheigRKhphaPGzQdHRbNQ7IxuUgG6jrmah4lRPRJeia3J_V9hPOL9yeV4lONC_GZ6EhsO_wOG5hzGDraYJ0mgwh7l43UVhPBOjCQrls0halykxcowfeiJ2o_7I99zFj6VzOYrwOoHh_bUXTsM3fVPRESrCsQGQ6KjVJr-4O6sLJyjjHOTBdffbGFP7dISqj5sQKDoaT55cVTNTeYThNlY9B1e-uCTxMPbuq6gX5mMKg"/>
+<div class="absolute top-md right-md bg-error px-md py-xs rounded-full flex items-center gap-xs shadow-lg">
+<span class="text-on-error font-cta text-[12px] uppercase">🔥 5 left</span>
+</div>
+<div class="absolute bottom-0 w-full p-md bg-surface/60 backdrop-blur-md border-t border-white/10">
+<p class="font-label-mono text-[10px] text-outline uppercase tracking-widest mb-xs">The Glade // GOA</p>
+<h3 class="font-headline-md text-[18px] text-white leading-tight uppercase mb-sm">ECHOES OF SILENCE</h3>
+<div class="flex justify-between items-center">
+<span class="font-cta text-secondary text-md">₹2,500</span>
+<span class="material-symbols-outlined text-white/50 text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Poster 4: More Events -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border-l-4 border-primary group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all" data-alt="A top-down view of a modern electronic music festival stage with complex laser arrays in shades of cyan and magenta. The design uses mixed morphism, blending glass textures and sharp light streaks. The image captures the high-intensity, youthful vibe of premium live experiences in a modern city like Bangalore or Mumbai." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzsi6Ar-aipYnVDcmSlpR8KSlhwYNCq2t30xwf7b3SbCEwO5NEU7QKFRDzX7saYDQzzwFzzKBJDeYzV0lDoyQkwoTPngn5zhXF_FfdBOyNUAu5MNqGKypj7kiqeMFsboHJsvyTIwGWfzjZrJApOqNrrUeIF-IDT-RdtP6-NOGZWcl2xiITHeXQyRMd3FS-3Uxp5wY0B_kIo9Lhs-FsQiK5SkhCxRIqCn8gl3VCt3dZkiqLxdOTYbM10NHRikvmlYZ795oanUDVl5o"/>
+<div class="absolute bottom-0 w-full p-md bg-surface/60 backdrop-blur-md border-t border-white/10">
+<p class="font-label-mono text-[10px] text-primary uppercase tracking-widest mb-xs">Mainstage // DEL</p>
+<h3 class="font-headline-md text-[18px] text-white leading-tight uppercase mb-sm">SYNTHETIC DREAMS</h3>
+<div class="flex justify-between items-center">
+<span class="font-cta text-secondary text-md">₹1,800</span>
+<span class="material-symbols-outlined text-white/50 text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Map View Button -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50">
+<button class="clay-button bg-secondary text-on-secondary px-lg py-sm rounded-full flex items-center gap-sm font-cta uppercase tracking-widest">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+            Map View
+        </button>
+</div>
+<!-- Bottom Navigation Bar (Brand Anchor) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-lg rounded-t-xl border-t border-white/10 shadow-[0_-10px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-mono text-label-mono">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary relative after:content-[''] after:w-1 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-mono text-label-mono">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-mono text-label-mono">Tickets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-mono text-label-mono">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-mono text-label-mono">Profile</span>
+</div>
+</nav>
+<!-- Interactive script for category chips selection -->
+<script>
+        document.querySelectorAll('button[class*="flex-none"]').forEach(chip => {
+            chip.addEventListener('click', function() {
+                // Simplified toggle logic for prototype
+                document.querySelectorAll('button[class*="flex-none"]').forEach(c => {
+                    c.classList.add('opacity-60');
+                    c.classList.remove('opacity-100');
+                    c.classList.remove('bg-primary-container');
+                    c.classList.remove('border-primary/30');
+                });
+                this.classList.remove('opacity-60');
+                this.classList.add('opacity-100');
+                this.classList.add('bg-primary-container');
+                this.classList.add('border-primary/30');
+            });
+        });
+    </script>
+</body></html>

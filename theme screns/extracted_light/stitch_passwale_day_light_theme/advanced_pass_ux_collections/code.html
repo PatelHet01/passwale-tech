@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASSWALE | Advanced Pass UX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .neo-shadow { shadow-[4px_4px_0px_0px_rgba(4,7,17,1)]; }
+        .neo-shadow-lg { shadow-[8px_8px_0px_0px_rgba(4,7,17,1)]; }
+        .pressed { transform: translate(4px, 4px); shadow: none; }
+        
+        /* Custom scrollbar for neo-brutalist aesthetic */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8f9fb; border-left: 2px solid #040711; }
+        ::-webkit-scrollbar-thumb { background: #040711; border: 1px solid #fcd34d; }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        .animate-ring { animation: pulse-ring 2s infinite; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#040711",
+                      "on-primary-container": "#838695",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-background": "#191c1e",
+                      "surface-bright": "#f8f9fb",
+                      "background": "#f8f9fb",
+                      "secondary-fixed-dim": "#eac33e",
+                      "surface-container-highest": "#e1e2e4",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9fb",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-secondary-fixed": "#231b00",
+                      "outline-variant": "#c7c6cc",
+                      "surface-dim": "#d9dadc",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "primary-fixed": "#dfe2f3",
+                      "inverse-surface": "#2e3132",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#574500",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-tint": "#5a5e6c",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e7e8ea",
+                      "on-primary-fixed-variant": "#434654",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#735c00",
+                      "on-tertiary-container": "#868788",
+                      "on-primary-fixed": "#171b27",
+                      "on-secondary-container": "#725b00",
+                      "secondary-container": "#fcd34d",
+                      "surface-container-low": "#f3f4f6",
+                      "primary-container": "#1b1f2b",
+                      "outline": "#76777c",
+                      "primary-fixed-dim": "#c3c6d6",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#edeef0",
+                      "on-surface": "#191c1e",
+                      "surface-variant": "#e1e2e4",
+                      "tertiary": "#060808",
+                      "tertiary-container": "#1e2020",
+                      "inverse-on-surface": "#f0f1f3",
+                      "on-surface-variant": "#46464c",
+                      "secondary-fixed": "#ffe086",
+                      "inverse-primary": "#c3c6d6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "lg": "48px",
+                      "margin-desktop": "64px",
+                      "sm": "12px",
+                      "xl": "80px",
+                      "gutter": "24px",
+                      "md": "24px",
+                      "margin-mobile": "16px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Montserrat"],
+                      "display-lg": ["Montserrat"],
+                      "body-lg": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "label-bold": ["Montserrat"],
+                      "label-sm": ["Montserrat"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "body-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-primary font-body-md overflow-x-hidden pb-20">
+<!-- Top Navigation Header -->
+<header class="bg-background dark:bg-primary text-primary dark:text-on-primary w-full top-0 sticky border-b-4 border-primary dark:border-secondary-fixed shadow-[4px_4px_0px_0px_rgba(4,7,17,1)] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full z-50">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary font-bold">arrow_back</button>
+<h1 class="font-display-lg text-headline-lg-mobile tracking-tighter uppercase text-primary dark:text-secondary-fixed">PASSWALE</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border-2 border-primary neo-shadow bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEaWIScbzaEAs24zBHf_KAwHrIuYU10XpRC9n06Xb2-ZyJJz8xITlVwu8cv8s3tqum0IpIx1leBhZyVpyJGdereEoGCUdmSD1Bz6BD_KRtsvZeKAKEnBdNy-QMas2A1FqUia9fZnBA8DRfUyc8YJBxfWa-bfT6BWL2N0ygLFKU1zNYFwXxISlM9kAaLcuFXIUCG3CbKYJFxnY8B2lLH5CkgBgm5HTIwhs4jG61XkdXghXr-Mur_NakoWuDKnYmVhPGlLa5z8X77Fxn"/>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile mt-8 space-y-lg">
+<!-- IP Collection Hero -->
+<section class="space-y-md">
+<div class="relative w-full aspect-video border-4 border-primary neo-shadow bg-primary-container overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent z-10"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="inline-block bg-secondary-container text-primary font-label-bold text-label-bold px-3 py-1 border-2 border-primary mb-2">COLLECTION #04</span>
+<h2 class="text-white font-headline-lg-mobile text-headline-lg-mobile">NEON GALAXY '24</h2>
+</div>
+<img class="w-full h-full object-cover opacity-80" data-alt="A high-energy electronic dance music festival scene at night with massive light installations, laser beams cutting through purple haze, and a crowd of ecstatic people silhouetted against a vibrant stage. The visual style is neo-brutalist with high contrast, sharp edges, and deep navy tones paired with neon yellow highlights. The atmosphere is electric, immersive, and captures the kinetic energy of a live futuristic music event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAao8WfQbkgsdxEQoQnRtgiFrZxS5QJYnVPGPFxtLOoLQQk1KD5DojLYqg11T2baIgCqwz8wIrY5qEhETaDNCo-agB83klk9NYnxSQJSYNbO7rRS27asM9Wmqx_3j8e6RTjQZsIhQ2WjyMqUM3JNxNaFgrpl-dX9mEaUmhC6KiHHr5QNgxTFGpWcpyLMHRbGhhw1X4BIYm2GEuO2hTQ-7dkeXnPYgIVq3C2D90IAuKlgiAOdKCnMCKFfgDEzss589mEGZyIXBqS7qD0"/>
+</div>
+<!-- Scene Streaks: Cultural Passport -->
+<div class="bg-secondary-container border-4 border-primary p-4 neo-shadow relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md leading-none">SCENE STREAK</h3>
+<p class="font-label-bold text-label-bold text-on-secondary-container mt-1">THE CULTURAL INSIDER STATUS</p>
+</div>
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex-shrink-0 w-16 h-16 border-2 border-primary bg-background flex flex-col items-center justify-center">
+<span class="font-label-bold text-label-sm leading-none">2021</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-shrink-0 w-16 h-16 border-2 border-primary bg-background flex flex-col items-center justify-center">
+<span class="font-label-bold text-label-sm leading-none">2022</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-shrink-0 w-16 h-16 border-2 border-primary bg-background flex flex-col items-center justify-center">
+<span class="font-label-bold text-label-sm leading-none">2023</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-shrink-0 w-16 h-16 border-2 border-primary bg-white flex flex-col items-center justify-center border-dashed">
+<span class="font-label-bold text-label-sm leading-none text-on-primary-container">2024</span>
+<span class="material-symbols-outlined text-on-primary-container">pending</span>
+</div>
+</div>
+<p class="text-sm font-bold mt-2 text-on-secondary-container">1 EVENT TO LEGENDARY STATUS</p>
+</div>
+</section>
+<!-- Advanced Pass UX: Wristband Linking -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md border-l-8 border-primary pl-4">DEVICE ACTIVATION</h3>
+<div class="bg-white border-2 border-primary p-6 neo-shadow space-y-4">
+<div class="flex items-center gap-4">
+<div class="relative w-16 h-16 bg-primary-fixed flex items-center justify-center border-2 border-primary">
+<span class="material-symbols-outlined text-3xl">nfc</span>
+<div class="absolute inset-0 border-4 border-secondary-container animate-ring opacity-50"></div>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md leading-tight">LINK WRISTBAND</h4>
+<p class="font-label-bold text-label-sm opacity-60">TAP PHONE TO NFC TAG</p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-primary border-2 border-primary py-4 font-label-bold text-label-bold neo-shadow active:translate-x-1 active:translate-y-1 active:shadow-none transition-all uppercase">
+                    START SCANNING
+                </button>
+</div>
+</section>
+<!-- Slot-Based Entry Selection -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md border-l-8 border-primary pl-4">RESERVE ENTRY SLOT</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary-container text-white border-2 border-primary p-4 neo-shadow relative">
+<div class="absolute top-2 right-2 w-3 h-3 bg-error rounded-full animate-pulse"></div>
+<span class="font-label-bold text-label-sm block opacity-70">SLOT A</span>
+<h4 class="font-display-lg text-headline-md mb-2">18:00</h4>
+<p class="font-label-bold text-label-sm">SOLD OUT</p>
+</div>
+<div class="bg-secondary-container text-primary border-2 border-primary p-4 neo-shadow active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer">
+<span class="font-label-bold text-label-sm block opacity-70">SLOT B</span>
+<h4 class="font-display-lg text-headline-md mb-2">20:30</h4>
+<p class="font-label-bold text-label-sm">4 SLOTS LEFT</p>
+</div>
+<div class="bg-white text-primary border-2 border-primary p-4 neo-shadow-lg opacity-40">
+<span class="font-label-bold text-label-sm block opacity-70">SLOT C</span>
+<h4 class="font-display-lg text-headline-md mb-2">22:00</h4>
+<p class="font-label-bold text-label-sm">LOCKED</p>
+</div>
+<div class="bg-white text-primary border-2 border-primary p-4 neo-shadow-lg opacity-40">
+<span class="font-label-bold text-label-sm block opacity-70">SLOT D</span>
+<h4 class="font-display-lg text-headline-md mb-2">00:00</h4>
+<p class="font-label-bold text-label-sm">LOCKED</p>
+</div>
+</div>
+</section>
+<!-- Past Lineups & Aftermovies (Archive) -->
+<section class="space-y-md pb-12">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md border-l-8 border-primary pl-4">VAULT ARCHIVE</h3>
+<span class="font-label-bold text-label-sm underline">VIEW ALL</span>
+</div>
+<div class="space-y-4">
+<!-- Archive Card 1 -->
+<div class="group relative bg-white border-2 border-primary overflow-hidden neo-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full border-r-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gritty, cinematic black and white photograph of a music producer in a dark studio filled with modular synthesizers and blinking LEDs. The aesthetic is industrial neo-brutalism with sharp contrasts and heavy shadows. The composer is intensely focused, with cables crisscrossing the frame, creating a sense of complex creative architecture. Light highlights the metallic surfaces of the gear and the textures of the performer's clothing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaU6PtemAp1nZ8kTzyir_XgOnTgMymOtKvtEOU8Xgj5HjQ0CRf6Bi9jU0g3j-1P0QRFp3ulqDXwXJqTNSX9qhF8gUxZNxIbSH9wfrf-st4ZNgDu00a19U7EGeK57wjEaA3464LSfvA4p-CPzRv8dAai0weCUDNpaEbEOIGkE5qlT3hhptw_JekGPFaBoDByi4OWF7YzQneJh55WWXa8BLoy20tYCt6GkOQLou1pYqBo4iVIPlw_NDXHicMOwJhLfTPwe_BOypDSBaE"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-center bg-surface-container-low">
+<span class="font-label-bold text-label-sm text-on-primary-container">2023 EDITION</span>
+<h4 class="font-headline-md text-headline-md leading-tight">SYNTHETIC DREAMS</h4>
+<div class="flex gap-2 mt-2">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="font-label-bold text-label-sm uppercase">Aftermovie</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Archive Card 2 -->
+<div class="group relative bg-white border-2 border-primary overflow-hidden neo-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full border-r-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A wide-angle landscape shot of a futuristic urban event space at sunset, featuring large monolithic structures with projected digital art. The sky is a deep indigo, contrasting with warm yellow glow coming from the structures. The crowd is sparse and stylish, adding to the elite atmosphere. The visual style is clean, geometric, and utilizes heavy strokes on the architectural elements to maintain a neo-brutalist look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk-ysWphttDqPJIFJ8tsgl4cSI1L7axeti6tyd-JfV7YBF-DB2jHM7Cwk87F6gdmGDTGY52091sg-ixMaO0Y4hxm1VHMOwDoKjch2qf4FgjNqicrBBceBNCCK6cNRluIb0R-TiRpUbI4-EqZePOPxDx3z4awbc8eX_-JLyhh6lNUWs4UZWw9MY6IyAIsxIuh0q2HDhUffCLkk72VxKaGlknefAyy6VUPiXP1Uv8IGJ1VJ6LFEAYht9q-Xst0djd-iLuiJiorulmVES"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-center bg-surface-container-low">
+<span class="font-label-bold text-label-sm text-on-primary-container">2022 EDITION</span>
+<h4 class="font-headline-md text-headline-md leading-tight">ORIGIN STORY</h4>
+<div class="flex gap-2 mt-2">
+<span class="material-symbols-outlined text-sm">list_alt</span>
+<span class="font-label-bold text-label-sm uppercase">Full Lineup</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-stretch h-16 bg-background dark:bg-primary text-primary dark:text-secondary-fixed border-t-4 border-primary shadow-[0px_-4px_0px_0px_rgba(4,7,17,1)] z-50">
+<a class="flex flex-col items-center justify-center text-on-primary-container py-1 flex-1 hover:bg-surface-container-high active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Scenes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary-container py-1 flex-1 hover:bg-surface-container-high active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">local_fire_department</span>
+<span class="font-label-sm text-label-sm">Drops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary-container py-1 flex-1 hover:bg-surface-container-high active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Squads</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container py-1 border-x-2 border-primary flex-1 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm">Vault</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for button pressing
+        document.querySelectorAll('button, .cursor-pointer').forEach(btn => {
+            btn.addEventListener('mousedown', function() {
+                this.classList.add('pressed');
+            });
+            btn.addEventListener('mouseup', function() {
+                this.classList.remove('pressed');
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.classList.remove('pressed');
+            });
+        });
+
+        // Slot selection simulation
+        const slots = document.querySelectorAll('.grid > div.bg-secondary-container, .grid > div.bg-white:not(.opacity-40)');
+        slots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                slots.forEach(s => {
+                    s.classList.remove('bg-primary', 'text-white');
+                    if(s.classList.contains('bg-white')) s.classList.add('bg-white');
+                    if(s.classList.contains('bg-secondary-container')) s.classList.add('bg-secondary-container');
+                });
+                this.classList.remove('bg-secondary-container', 'bg-white');
+                this.classList.add('bg-primary', 'text-white');
+            });
+        });
+
+        // NFC Scanning animation trigger
+        const scanBtn = document.querySelector('button.bg-secondary-container');
+        scanBtn.addEventListener('click', function() {
+            const statusText = this.parentElement.querySelector('p');
+            const ring = this.parentElement.querySelector('.animate-ring');
+            
+            this.innerText = 'SCANNING...';
+            this.classList.add('animate-pulse');
+            ring.style.borderColor = '#040711';
+            
+            setTimeout(() => {
+                this.innerText = 'LINKED SUCCESSFULLY';
+                this.classList.remove('animate-pulse');
+                this.classList.replace('bg-secondary-container', 'bg-green-400');
+                statusText.innerText = 'WRISTBAND ID: PW-992-GALAXY';
+                ring.classList.remove('animate-ring');
+                ring.style.borderColor = 'green';
+                ring.style.opacity = '1';
+            }, 2500);
+        });
+    </script>
+</body></html>

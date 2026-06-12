@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#5d5f5f",
+                    "on-surface": "#1f1b12",
+                    "surface": "#fff8f0",
+                    "primary": "#735c00",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#111c2d",
+                    "inverse-on-surface": "#f8f0e1",
+                    "surface-dim": "#e1d9cb",
+                    "inverse-surface": "#343026",
+                    "surface-container": "#f5edde",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#eae2d3",
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-container": "#d5e0f8",
+                    "surface-container-low": "#fbf3e4",
+                    "surface-container-highest": "#eae2d3",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-surface-variant": "#4d4635",
+                    "inverse-primary": "#eac33e",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "outline-variant": "#d0c6ae",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#eac33e",
+                    "on-secondary-container": "#586377",
+                    "surface-container-high": "#f0e7d9",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-tint": "#735c00",
+                    "surface-bright": "#fff8f0",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "primary-container": "#fcd34d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#d6d7d7",
+                    "on-secondary": "#ffffff",
+                    "outline": "#7f7662",
+                    "on-primary-container": "#715b00",
+                    "on-error": "#ffffff",
+                    "background": "#fff8f0",
+                    "on-tertiary-container": "#5c5d5e",
+                    "primary-fixed": "#ffe086",
+                    "on-background": "#1f1b12",
+                    "secondary": "#545f73",
+                    "on-primary-fixed": "#231b00",
+                    "secondary-fixed": "#d8e3fb",
+                    "tertiary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "container-margin": "20px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "caption": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-bold": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #fff8f0; }
+        .neo-shadow { box-shadow: 4px 4px 0px 0px #1f1b12; }
+        .neo-shadow-lg { box-shadow: 8px 8px 0px 0px #1f1b12; }
+        .neo-shadow-press:active { box-shadow: 0px 0px 0px 0px #1f1b12; transform: translate(4px, 4px); }
+        .neo-border { border: 2px solid #1f1b12; }
+        .neo-border-thick { border: 3px solid #1f1b12; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface pb-32">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 flex justify-between items-center px-gutter py-base bg-surface dark:bg-inverse-surface border-b-2 border-on-surface">
+<div class="flex items-center">
+<span class="material-symbols-outlined mr-4 text-on-surface">menu</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-black text-primary italic tracking-tighter">PASSWALE</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</div>
+</header>
+<main class="max-w-md mx-auto px-container-margin mt-8">
+<!-- Profile Header -->
+<section class="mb-10">
+<div class="flex flex-col items-center">
+<div class="relative mb-4">
+<div class="w-32 h-32 neo-border-thick overflow-hidden bg-primary-container">
+<img alt="Alex Rivers" class="w-full h-full object-cover" data-alt="A portrait of a stylish young man with a modern haircut posing against a vibrant yellow urban wall. The image features high contrast, professional lighting, and a neo-brutalist aesthetic with deep navy shadows and bright pops of saturated yellow. The overall mood is cool, energetic, and contemporary nightlife-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCECgaXmpwY4g0TIGjI3WjErAFB2DHQ2PM3Df1LnzymwpjmZxsy7fpbjy0srB-NmYrCCQNeOcPZYvf8VB-u2Sul_KB-rx-zIHs5vqigpGd2qjUY8S_FPpp7Nv4t9GxO9muQpEh-sH3UiLP8SHOV_WBkbwSY3GMSOyDe0p43aJLnx0uuBlDR3MnkHJidZe8Lj_TB1Vsuz4_Y4WrTA1-4S-1tDrlc2tc2vJGa2_zWoRMw9uf_q6pIzdFnulz9Jc4OfWF-_Naxnq3Blevf"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary neo-border px-3 py-1 font-label-bold text-label-bold uppercase neo-shadow">
+                        LVL 42
+                    </div>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile uppercase mb-1">Alex Rivers</h2>
+<div class="flex items-center gap-2 mb-6">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 font-label-bold text-[10px] neo-border uppercase">VIP RAAVER</span>
+<span class="text-caption font-caption text-on-surface-variant uppercase">Joined Dec 2023</span>
+</div>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-lowest neo-border p-4 neo-shadow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-bold text-label-bold uppercase">Passes</span>
+</div>
+<span class="font-display-lg text-[32px] leading-none">124</span>
+</div>
+<div class="bg-surface-container-lowest neo-border p-4 neo-shadow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-label-bold uppercase">Events</span>
+</div>
+<span class="font-display-lg text-[32px] leading-none">89</span>
+</div>
+</section>
+<!-- Linked Accounts -->
+<section class="mb-8">
+<h3 class="font-headline-md text-headline-md uppercase mb-4 border-b-2 border-on-surface pb-1 inline-block">Linked Accounts</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center bg-surface-container-low neo-border p-3 neo-shadow-press transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface">language</span>
+<span class="font-label-bold text-label-bold uppercase">Spotify</span>
+</div>
+<span class="text-caption font-caption text-primary uppercase">Connected</span>
+</div>
+<div class="flex justify-between items-center bg-white neo-border p-3 opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface">link</span>
+<span class="font-label-bold text-label-bold uppercase">Instagram</span>
+</div>
+<span class="text-caption font-caption uppercase">Link now</span>
+</div>
+</div>
+</section>
+<!-- Preferences -->
+<section class="mb-8">
+<h3 class="font-headline-md text-headline-md uppercase mb-4 border-b-2 border-on-surface pb-1 inline-block">Preferences</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center bg-white neo-border p-4">
+<span class="font-label-bold text-label-bold uppercase">Dark Mode</span>
+<div class="w-12 h-6 bg-on-surface flex items-center px-1 neo-border">
+<div class="w-4 h-4 bg-primary-container"></div>
+</div>
+</div>
+<div class="flex justify-between items-center bg-white neo-border p-4">
+<span class="font-label-bold text-label-bold uppercase">Notifications</span>
+<div class="w-12 h-6 bg-primary-container flex items-center justify-end px-1 neo-border">
+<div class="w-4 h-4 bg-on-surface"></div>
+</div>
+</div>
+<div class="flex justify-between items-center bg-white neo-border p-4">
+<span class="font-label-bold text-label-bold uppercase">Ticket Alerts</span>
+<div class="w-12 h-6 bg-primary-container flex items-center justify-end px-1 neo-border">
+<div class="w-4 h-4 bg-on-surface"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mb-12">
+<div class="bg-on-surface text-surface p-6 neo-border-thick neo-shadow-lg">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Host your own?</h3>
+<p class="font-body-md text-surface-variant mb-6 uppercase leading-tight">Turn your vision into reality. Join the Passwale network as an organizer today.</p>
+<button class="w-full bg-primary-container text-on-surface font-label-bold text-label-bold py-4 neo-border uppercase neo-shadow-press transition-all">
+                    Become an Organizer
+                </button>
+</div>
+</section>
+<!-- Security/Legal -->
+<section class="space-y-4 mb-20 text-center">
+<button class="text-caption font-caption uppercase underline tracking-widest text-on-surface-variant">Terms of Service</button>
+<div class="flex justify-center gap-4">
+<button class="text-error font-label-bold text-label-bold uppercase border-2 border-error px-6 py-2">Log Out</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 bg-surface dark:bg-inverse-surface h-20 border-t-2 border-on-surface z-50">
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-inverse-on-surface opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-bold text-label-bold uppercase">EXPLORE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-inverse-on-surface opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-bold text-label-bold uppercase">MY PASSES</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed border-2 border-on-surface dark:border-on-surface px-4 py-1 rounded-none shadow-[4px_4px_0px_0px_#1f1b12] active:shadow-none active:translate-x-1 active:translate-y-1">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-bold text-label-bold uppercase">PROFILE</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('.neo-shadow-press').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.boxShadow = '0px 0px 0px 0px #1f1b12';
+                button.style.transform = 'translate(4px, 4px)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.boxShadow = '4px 4px 0px 0px #1f1b12';
+                button.style.transform = 'translate(0px, 0px)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.boxShadow = '4px 4px 0px 0px #1f1b12';
+                button.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    </script>
+</body></html>

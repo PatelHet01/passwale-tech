@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASSWALE | Attendee Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .diagonal-bg {
+            background-image: repeating-linear-gradient(105deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
+        }
+        .neomorphic-well {
+            box-shadow: inset 4px 4px 10px rgba(0,0,0,0.5), inset -2px -2px 10px rgba(255,255,255,0.05);
+        }
+        .ticket-perforation {
+            background-image: radial-gradient(circle, transparent 4px, #121414 4px);
+            background-size: 12px 12px;
+            background-position: -6px center;
+            background-repeat: repeat-y;
+        }
+        .skeuomorphic-card {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7), 0 0 1px 1px rgba(255,255,255,0.1);
+        }
+        .clay-shadow-yellow {
+            filter: drop-shadow(0 4px 6px rgba(250, 204, 21, 0.4));
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#121414",
+                      "on-tertiary": "#333025",
+                      "on-tertiary-fixed-variant": "#4a473b",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#2f3131",
+                      "on-background": "#e2e2e2",
+                      "on-surface": "#e2e2e2",
+                      "surface-variant": "#333535",
+                      "inverse-surface": "#e2e2e2",
+                      "tertiary-fixed": "#e9e2d2",
+                      "surface-container-highest": "#333535",
+                      "surface-container": "#1e2020",
+                      "tertiary-fixed-dim": "#ccc6b6",
+                      "outline-variant": "#45464e",
+                      "secondary-container": "#eec200",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#515d84",
+                      "surface-bright": "#37393a",
+                      "on-primary": "#222f53",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#eec200",
+                      "on-primary-container": "#7784ad",
+                      "primary-fixed-dim": "#b9c5f2",
+                      "surface-container-high": "#282a2b",
+                      "on-surface-variant": "#c6c6cf",
+                      "on-tertiary-container": "#898577",
+                      "tertiary-container": "#1f1d13",
+                      "surface-container-lowest": "#0c0f0f",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#645000",
+                      "primary-fixed": "#dbe1ff",
+                      "secondary-fixed": "#ffe083",
+                      "surface-dim": "#121414",
+                      "primary": "#b9c5f2",
+                      "on-secondary": "#3c2f00",
+                      "secondary": "#ffe083",
+                      "tertiary": "#ccc6b6",
+                      "on-primary-fixed": "#0b1a3d",
+                      "on-tertiary-fixed": "#1e1c12",
+                      "outline": "#8f9099",
+                      "on-primary-fixed-variant": "#39456b",
+                      "background": "#121414",
+                      "surface-tint": "#b9c5f2",
+                      "surface-container-low": "#1a1c1c",
+                      "primary-container": "#0d1b3e",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-secondary-fixed": "#231b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "grid-gutter": "16px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "grid-margin": "20px"
+              },
+              "fontFamily": {
+                      "display-xl": ["Anton"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "headline-md": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "label-mono": ["Space Mono"],
+                      "cta": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "display-xl": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "cta": ["16px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary selection:text-on-secondary min-h-screen diagonal-bg pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-on-surface/10 flex justify-between items-center px-grid-margin py-md shadow-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-headline-md active:scale-95 transition-transform">menu</span>
+<h1 class="font-display-xl text-[28px] leading-none text-secondary uppercase tracking-tighter">PASSWALE</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-headline-md">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary overflow-hidden active:scale-95 transition-transform cursor-pointer">
+<img alt="Rohan Sharma" class="w-full h-full object-cover" data-alt="A professional and stylish portrait of a young Indian man with a clean-shaven face and modern haircut. He is wearing a sleek, dark bomber jacket in a studio setting with dramatic, colorful neon accent lighting that reflects the high-energy, underground techno event aesthetic of the brand. The color palette consists of deep navy shadows and vibrant amber highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAur0rBCeMaKBu4EkCaFwhcv6p7iZ24zPyag2V8vQqHk3fus0dpZOlNMNp9H1Uqhh6PePkzioBEaO_XuMHIijoQoqLU2d6fhRPuACtRaPDm61RiMIT-D8XLzhzuTXFnRbVwRH4ANHvTRPVlp6FqHCORk9GwNiepYT9fMjnnA_zybGOJJLwalGOyK8MncqkqfzyZ8BF39lxcj4UJAzB0GSbNh-YG-2Jc-Lr7s9XqqgIAqsWmJHLTHYClD9dsoIpmQsqt-AuBKPy913k"/>
+</div>
+</div>
+</header>
+<main class="mt-24 px-grid-margin space-y-xl">
+<!-- Glass Profile Header Card -->
+<section class="relative overflow-hidden rounded-3xl bg-surface-container/40 backdrop-blur-2xl border border-white/10 p-lg shadow-2xl">
+<div class="flex justify-between items-start">
+<div class="space-y-unit">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Rohan Sharma</h2>
+<div class="flex items-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-mono text-label-mono">12 DAY SCENE STREAK</span>
+</div>
+<p class="text-on-surface-variant font-cta text-[14px] mt-2 uppercase tracking-widest">Pro Attendee • Level 4</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="neomorphic-well rounded-2xl p-md bg-surface flex flex-col items-center justify-center min-w-[100px]">
+<span class="text-secondary font-display-xl text-headline-md leading-none" id="coin-counter">1,280</span>
+<span class="text-on-surface-variant font-label-mono text-[10px] mt-1">PASSCOINS</span>
+</div>
+</div>
+</div>
+<!-- Claymorphic Decoration -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 opacity-20 rotate-12">
+<span class="material-symbols-outlined text-[120px] text-secondary clay-shadow-yellow" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+</div>
+</section>
+<!-- Upcoming Events - Skeuomorphic Tickets -->
+<section class="space-y-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md">Upcoming Passes</h3>
+<span class="text-secondary font-cta text-sm uppercase tracking-wider cursor-pointer">View All</span>
+</div>
+<div class="space-y-lg">
+<!-- Ticket 1 -->
+<div class="skeuomorphic-card bg-[#e2e2e2] rounded-2xl overflow-hidden flex h-32 group hover:-translate-y-1 transition-transform">
+<div class="w-1/3 bg-primary-container p-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 diagonal-bg pointer-events-none"></div>
+<span class="font-label-mono text-[10px] text-primary uppercase">Sat, 24 Oct</span>
+<div class="space-y-0">
+<p class="font-display-xl text-headline-md text-white leading-tight">NEON</p>
+<p class="font-display-xl text-headline-md text-white leading-tight">RAVE</p>
+</div>
+</div>
+<!-- Perforation Line -->
+<div class="w-4 h-full bg-[#e2e2e2] ticket-perforation relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-black/10"></div>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-black/10"></div>
+</div>
+<!-- Main Ticket Body -->
+<div class="flex-1 p-md flex flex-col justify-between text-surface relative">
+<div class="absolute top-2 right-2 flex gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<p class="font-cta text-xs uppercase opacity-60">Venue</p>
+<p class="font-headline-md text-lg leading-tight">Bunker 42, Mumbai</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[10px] tracking-tighter">ID: #PX-9928-SK</span>
+<div class="bg-surface text-secondary px-3 py-1 rounded-full font-cta text-[10px] active:scale-95">REDEEM</div>
+</div>
+</div>
+</div>
+<!-- Ticket 2 -->
+<div class="skeuomorphic-card bg-[#e2e2e2] rounded-2xl overflow-hidden flex h-32 opacity-90 grayscale-[0.2]">
+<div class="w-1/3 bg-on-tertiary-fixed-variant p-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 diagonal-bg pointer-events-none"></div>
+<span class="font-label-mono text-[10px] text-tertiary-fixed uppercase">Sun, 01 Nov</span>
+<div class="space-y-0">
+<p class="font-display-xl text-headline-md text-white leading-tight">SOUL</p>
+<p class="font-display-xl text-headline-md text-white leading-tight">FEST</p>
+</div>
+</div>
+<div class="w-4 h-full bg-[#e2e2e2] ticket-perforation relative"></div>
+<div class="flex-1 p-md flex flex-col justify-between text-surface">
+<div>
+<p class="font-cta text-xs uppercase opacity-60">Venue</p>
+<p class="font-headline-md text-lg leading-tight">Great Grounds, Pune</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[10px] tracking-tighter">ID: #PX-1042-AL</span>
+<div class="bg-surface/10 text-surface/50 border border-surface/20 px-3 py-1 rounded-full font-cta text-[10px]">UPCOMING</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scene Progress Bars -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md">Your Scene Rep</h3>
+<div class="grid grid-cols-1 gap-lg">
+<!-- Progress 1 -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center px-1">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-cta text-sm uppercase">Techno Underworld</span>
+</div>
+<span class="font-label-mono text-xs">85%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden p-[2px]">
+<div class="h-full bg-secondary rounded-full shadow-[0_0_15px_rgba(250,204,21,0.5)]" style="width: 85%"></div>
+</div>
+</div>
+<!-- Progress 2 -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center px-1">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-cta text-sm uppercase">Community Hub</span>
+</div>
+<span class="font-label-mono text-xs">42%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden p-[2px]">
+<div class="h-full bg-primary rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Grid -->
+<section class="grid grid-cols-2 gap-grid-gutter pb-8">
+<button class="bg-surface-container-high p-lg rounded-2xl border border-white/5 flex flex-col items-center justify-center gap-sm active:scale-95 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</div>
+<span class="font-cta text-xs uppercase text-on-surface">Scan Entry</span>
+</button>
+<button class="bg-surface-container-high p-lg rounded-2xl border border-white/5 flex flex-col items-center justify-center gap-sm active:scale-95 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">redeem</span>
+</div>
+<span class="font-cta text-xs uppercase text-on-surface">Store</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-mono text-label-mono">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-mono text-label-mono">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-mono text-label-mono">Tickets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-mono text-label-mono">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary relative after:content-[''] after:w-1 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-mono text-label-mono">Profile</span>
+</div>
+</nav>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Animate counter for PassCoins
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const counter = document.getElementById('coin-counter');
+            animateValue(counter, 0, 1280, 2000);
+        });
+
+        // Add subtle interactivity to tickets
+        document.querySelectorAll('.skeuomorphic-card').forEach(card => {
+            card.addEventListener('mousedown', () => card.style.transform = 'scale(0.98)');
+            card.addEventListener('mouseup', () => card.style.transform = 'scale(1)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+        });
+    </script>
+</body></html>

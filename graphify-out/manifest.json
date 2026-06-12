@@ -1,0 +1,452 @@
+{
+  "apps/api/package.json": {
+    "mtime": 1781173710.1119184,
+    "ast_hash": "a0a818f1109de78ee23e68bece7b2eef",
+    "semantic_hash": ""
+  },
+  "apps/api/server.js": {
+    "mtime": 1781173695.8369079,
+    "ast_hash": "30a9feca41d24e03bca12974f3e146db",
+    "semantic_hash": ""
+  },
+  "apps/api/src/jobs/scene-stats.job.js": {
+    "mtime": 1781173592.875599,
+    "ast_hash": "00c0f180361c52440bce06cf785a1517",
+    "semantic_hash": ""
+  },
+  "apps/api/src/jobs/squad-cleanup.job.js": {
+    "mtime": 1781173597.5405414,
+    "ast_hash": "f53dc4213f6ca5f5c4502fe08b817098",
+    "semantic_hash": ""
+  },
+  "apps/api/src/jobs/subscription-check.job.js": {
+    "mtime": 1781173601.9797375,
+    "ast_hash": "3b7aa4feee51770fc7878a18ccf3b430",
+    "semantic_hash": ""
+  },
+  "apps/api/src/middleware/authenticate.js": {
+    "mtime": 1781173612.5864906,
+    "ast_hash": "8645addb986d06e85d56cf056c33fb5f",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/AdminSettings.model.js": {
+    "mtime": 1781172928.7793078,
+    "ast_hash": "93b831ff05c7bf15137ff5b5daed887c",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/AuditLog.model.js": {
+    "mtime": 1781173584.3026814,
+    "ast_hash": "179c574ca4a1c574d8d838fb062ff539",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Event.model.js": {
+    "mtime": 1781174060.3495047,
+    "ast_hash": "5984b394a5415a5325717ae9c9705cb1",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Notification.model.js": {
+    "mtime": 1781173588.1962137,
+    "ast_hash": "91ea270029bc9637a7f8fabfdc2b85ab",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/PassCoinTransaction.model.js": {
+    "mtime": 1781173556.585577,
+    "ast_hash": "3fa2f38982ce9569ee989c6fef445fc0",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/PassCollection.model.js": {
+    "mtime": 1781173566.5833855,
+    "ast_hash": "290badb56b249cbce4cf5207f016b781",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Payout.model.js": {
+    "mtime": 1781173575.7625816,
+    "ast_hash": "f96c5b424966861bfd3a9d898a6a351e",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Refund.model.js": {
+    "mtime": 1781173579.9610212,
+    "ast_hash": "8913feb0408d236be668f61aef0e9cf7",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Scene.model.js": {
+    "mtime": 1781172961.4144373,
+    "ast_hash": "66386af7d1017206df4b42fea4922472",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Squad.model.js": {
+    "mtime": 1781173562.2082484,
+    "ast_hash": "66e889a2e5908c98a629b0686d034a40",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Subscription.model.js": {
+    "mtime": 1781173571.0491722,
+    "ast_hash": "3020c258e80a0932e15cb3cb40b2a498",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Ticket.model.js": {
+    "mtime": 1781173547.3451865,
+    "ast_hash": "b077d8d4a1250984544754abaaa07310",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/Transaction.model.js": {
+    "mtime": 1781173552.173754,
+    "ast_hash": "84978e5d4d0a5d0f2a5c98ccf8c755a2",
+    "semantic_hash": ""
+  },
+  "apps/api/src/models/User.model.js": {
+    "mtime": 1781174049.1399164,
+    "ast_hash": "a90e1f761be5fbd50f424dd055ed84b3",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/admin.routes.js": {
+    "mtime": 1781173618.349218,
+    "ast_hash": "3d0a12f7bceb8f56ba9444138953482e",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/auth.routes.js": {
+    "mtime": 1781173608.3293412,
+    "ast_hash": "41502387b91908268aafb67c38de158b",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/events.routes.js": {
+    "mtime": 1781173635.3511405,
+    "ast_hash": "e7b1493d96ee699ab93b57b01fe8b0c4",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/notifications.routes.js": {
+    "mtime": 1781173669.6441329,
+    "ast_hash": "58a9420962c089c9c2dc37349ac1735a",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/organizer.routes.js": {
+    "mtime": 1781173683.3840477,
+    "ast_hash": "3b9a6f06b2c2357e0ac1edc283c2085e",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/pricing.routes.js": {
+    "mtime": 1781173645.1535022,
+    "ast_hash": "7153ea83100df57d01846f4c9c69cc5e",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/scenes.routes.js": {
+    "mtime": 1781173625.9594235,
+    "ast_hash": "9079be3de9c9071337d696dc473396c5",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/squads.routes.js": {
+    "mtime": 1781173665.1050787,
+    "ast_hash": "d00ebbc658ab55685870673fa79ab07e",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/subscriptions.routes.js": {
+    "mtime": 1781173659.1760752,
+    "ast_hash": "6aa92ce0c69bcc3c6aed427babaf8d1d",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/tickets.routes.js": {
+    "mtime": 1781173653.1276786,
+    "ast_hash": "0c931e1e697044be7628aa862903c736",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/upload.routes.js": {
+    "mtime": 1781173677.2514062,
+    "ast_hash": "4196688b127c2ced292897a4bae42159",
+    "semantic_hash": ""
+  },
+  "apps/api/src/routes/webhooks.routes.js": {
+    "mtime": 1781173688.0829349,
+    "ast_hash": "f64046d75ac0b0c8fa678d4fb7c994b3",
+    "semantic_hash": ""
+  },
+  "apps/api/src/scripts/seed.js": {
+    "mtime": 1781173705.7190583,
+    "ast_hash": "fad23a8d2b34326596b919fa2eeba9bd",
+    "semantic_hash": ""
+  },
+  "apps/api/src/services/pricing.service.js": {
+    "mtime": 1781173640.4718287,
+    "ast_hash": "f5b1d3f9bfa2ed35a726e4fe6083e6f8",
+    "semantic_hash": ""
+  },
+  "apps/web/eslint.config.js": {
+    "mtime": 1781172659.6822426,
+    "ast_hash": "3aa4b57d7f08181d86bde52a4dcb7f22",
+    "semantic_hash": ""
+  },
+  "apps/web/package.json": {
+    "mtime": 1781172694.8015873,
+    "ast_hash": "b34660f70e5a1cb28473287f46bfb5bc",
+    "semantic_hash": ""
+  },
+  "apps/web/src/App.jsx": {
+    "mtime": 1781172777.240545,
+    "ast_hash": "5aac1f86ac406c737dfa3bcd5acb9b2a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/auth/ProtectedRoute.jsx": {
+    "mtime": 1781172810.5819778,
+    "ast_hash": "7346f420cd86b6c7331c0e08b1ff8646",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/auth/RoleRoute.jsx": {
+    "mtime": 1781172817.3094873,
+    "ast_hash": "5510b13895d749ac87406361ab1f9692",
+    "semantic_hash": ""
+  },
+  "apps/web/src/layouts/AdminLayout.jsx": {
+    "mtime": 1781173736.0711992,
+    "ast_hash": "2d521f8256301c59629719313d192851",
+    "semantic_hash": ""
+  },
+  "apps/web/src/layouts/AppLayout.jsx": {
+    "mtime": 1781173722.690444,
+    "ast_hash": "8225062d74e6cc2e95a4b726f99e39ba",
+    "semantic_hash": ""
+  },
+  "apps/web/src/layouts/AuthLayout.jsx": {
+    "mtime": 1781172831.4926422,
+    "ast_hash": "9a6ba1a7a1461a0f0ef2a64d17722bc1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/layouts/OrganizerLayout.jsx": {
+    "mtime": 1781173729.7354536,
+    "ast_hash": "46647a15535fe04451b4d97959369dd7",
+    "semantic_hash": ""
+  },
+  "apps/web/src/main.jsx": {
+    "mtime": 1781172659.6864898,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/LandingPage.jsx": {
+    "mtime": 1781174585.6243906,
+    "ast_hash": "d081a755e3a64260f710f25c65c8ee75",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminAuditLogsPage.jsx": {
+    "mtime": 1781173903.20066,
+    "ast_hash": "f9d470b71ba050c69f00f1a1102855d1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminDashboard.jsx": {
+    "mtime": 1781173873.7391658,
+    "ast_hash": "70e3dc3543a65c78249b2c6239d3d595",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminEventsPage.jsx": {
+    "mtime": 1781173892.5072734,
+    "ast_hash": "17a40d5bc8d0d44a3bc119313e49a033",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminFinancialsPage.jsx": {
+    "mtime": 1781173897.745642,
+    "ast_hash": "11d3d8e641446bdb784b2b9c6918b9d0",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminNotificationsPage.jsx": {
+    "mtime": 1781173912.526682,
+    "ast_hash": "d937729597d452bd50f685c48dae1694",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminPricingPage.jsx": {
+    "mtime": 1781173880.043393,
+    "ast_hash": "a9bb58b24c3147cb6f92e17d7c5a6c13",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminSalesPage.jsx": {
+    "mtime": 1781173908.1863585,
+    "ast_hash": "e4dafe730d4449fd3cc4c1eefd950606",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/admin/AdminUsersPage.jsx": {
+    "mtime": 1781173886.5640943,
+    "ast_hash": "065be04594faf86a786aeeb93b5ffdc4",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/auth/ForgotPasswordPage.jsx": {
+    "mtime": 1781173757.2713203,
+    "ast_hash": "739589024e734ae40f813a89bf59e543",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/auth/LoginPage.jsx": {
+    "mtime": 1781172880.7980103,
+    "ast_hash": "39cc92323cf2e71046a233b5afacd15c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/auth/ResetPasswordPage.jsx": {
+    "mtime": 1781173762.0621357,
+    "ast_hash": "c957693f18d4a2c7cc1af60b76d2b0ea",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/auth/SignupPage.jsx": {
+    "mtime": 1781173752.2520626,
+    "ast_hash": "0b947546a6be09b1580a41f73777b575",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/auth/VerifyEmailPage.jsx": {
+    "mtime": 1781173766.6325314,
+    "ast_hash": "78f4bd7a34c1a02030f7017a009e289e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/dashboard/DashboardPage.jsx": {
+    "mtime": 1781173806.1217043,
+    "ast_hash": "0c7a72cb5b1610a51f995301d25e601c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/dashboard/MyCardPage.jsx": {
+    "mtime": 1781173821.343453,
+    "ast_hash": "a2e97a342e1a1727b2e986725d9b1c8d",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/dashboard/MyTicketsPage.jsx": {
+    "mtime": 1781173813.6079,
+    "ast_hash": "e0a7f5c48e1c67fe7a92d7a1d9c3b66f",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/dashboard/ProfilePage.jsx": {
+    "mtime": 1781173832.3557086,
+    "ast_hash": "15226239a50c67f59de73dcb5f5b28ca",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/dashboard/WalletPage.jsx": {
+    "mtime": 1781173827.02677,
+    "ast_hash": "fe1ff848d607ff9af1a355667ba767c3",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/events/EventMicrosite.jsx": {
+    "mtime": 1781173786.4148903,
+    "ast_hash": "95b67290299d41e43b57e6be42d4df5a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/events/EventsPage.jsx": {
+    "mtime": 1781173775.3911304,
+    "ast_hash": "82a9952df6ce6dfadb48178396b4c6b2",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/organizer/CheckInPage.jsx": {
+    "mtime": 1781173867.8878977,
+    "ast_hash": "114aeb2110a2a821690bfe122ae3e1c3",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/organizer/CreateEventPage.jsx": {
+    "mtime": 1781173854.1134973,
+    "ast_hash": "e84931269ce53cd24eee66afe1c75f08",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/organizer/EventAnalyticsPage.jsx": {
+    "mtime": 1781173860.6754966,
+    "ast_hash": "d270f09e84a04562fc0e4cfd27286d5c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/organizer/OrganizerEventsPage.jsx": {
+    "mtime": 1781173844.636361,
+    "ast_hash": "0c5a249563d7b268d65ec433aaa7643a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/organizer/OrganizerHome.jsx": {
+    "mtime": 1781173838.47524,
+    "ast_hash": "4c1385c797c2b093b6028e1d77ee1408",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/payments/PaymentCallbackPage.jsx": {
+    "mtime": 1781173917.0825257,
+    "ast_hash": "d401fd3ef9cc81539ad8b67e0aa75384",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/scenes/SceneDetailPage.jsx": {
+    "mtime": 1781173800.0450363,
+    "ast_hash": "f84097dd76c87563ae2a2c8ce6fabb77",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/scenes/ScenesPage.jsx": {
+    "mtime": 1781174092.9232793,
+    "ast_hash": "66f17e7b2a4b0fca7e1c64fe6f3d4951",
+    "semantic_hash": ""
+  },
+  "apps/web/src/pages/squads/SquadPage.jsx": {
+    "mtime": 1781173923.388613,
+    "ast_hash": "266c6de73de9dbebf3a99c6ddf4c67cc",
+    "semantic_hash": ""
+  },
+  "apps/web/src/services/api.js": {
+    "mtime": 1781172802.284509,
+    "ast_hash": "2e7dd2b97c8382a9c108722ab7ae2765",
+    "semantic_hash": ""
+  },
+  "apps/web/src/stores/authStore.js": {
+    "mtime": 1781172791.1265476,
+    "ast_hash": "e8c099f7bae1ccf74ab4020c42a4c54f",
+    "semantic_hash": ""
+  },
+  "apps/web/vite.config.js": {
+    "mtime": 1781172711.9597054,
+    "ast_hash": "9ac023dfae8eac5c96284f9f912cdf5e",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1781171326.8642492,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1781171326.8645391,
+    "ast_hash": "0bc020d491fca99550c1ea3de0a5f862",
+    "semantic_hash": ""
+  },
+  "FEATURES.md": {
+    "mtime": 1781171530.0614572,
+    "ast_hash": "a5f5134eb9236526df6a059c93b22bb7",
+    "semantic_hash": ""
+  },
+  "MVP_PLAN.md": {
+    "mtime": 1781172073.507116,
+    "ast_hash": "46998207280f4595252f7b6143ab06f7",
+    "semantic_hash": ""
+  },
+  "apps/web/README.md": {
+    "mtime": 1781172659.6817975,
+    "ast_hash": "a28dc4cb878325f3e9e5649f3e1469ac",
+    "semantic_hash": ""
+  },
+  "apps/web/index.html": {
+    "mtime": 1781172659.6826143,
+    "ast_hash": "5a28700b4eb0ed4ee7cd5925ee46be48",
+    "semantic_hash": ""
+  },
+  "passwale-implementation-plan.md": {
+    "mtime": 1781170950.7484477,
+    "ast_hash": "f988d2e5a6aefaea1afc637b64a6e001",
+    "semantic_hash": ""
+  },
+  "apps/web/public/favicon.svg": {
+    "mtime": 1781172659.683292,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "apps/web/public/icons.svg": {
+    "mtime": 1781172659.6838303,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "apps/web/src/assets/hero.png": {
+    "mtime": 1781172659.6849694,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/assets/react.svg": {
+    "mtime": 1781172659.6858654,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "apps/web/src/assets/vite.svg": {
+    "mtime": 1781172659.6861467,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1781173941.8273628,
+    "ast_hash": "a9fbbad0aad32fb49ee5562d621b4b08",
+    "semantic_hash": ""
+  }
+}

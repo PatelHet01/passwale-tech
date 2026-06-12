@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASSWALE | Your Pass to Extraordinary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&family=Space+Grotesk:wght@600;700&family=Space+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Inter:wght@100..900&family=Space+Grotesk:wght@100..900&family=Space+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121414",
+                        "on-tertiary": "#333025",
+                        "on-tertiary-fixed-variant": "#4a473b",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-background": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed": "#e9e2d2",
+                        "surface-container-highest": "#333535",
+                        "surface-container": "#1e2020",
+                        "tertiary-fixed-dim": "#ccc6b6",
+                        "outline-variant": "#45464e",
+                        "secondary-container": "#eec200",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#515d84",
+                        "surface-bright": "#37393a",
+                        "on-primary": "#222f53",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#eec200",
+                        "on-primary-container": "#7784ad",
+                        "primary-fixed-dim": "#b9c5f2",
+                        "surface-container-high": "#282a2b",
+                        "on-surface-variant": "#c6c6cf",
+                        "on-tertiary-container": "#898577",
+                        "tertiary-container": "#1f1d13",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#645000",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-fixed": "#ffe083",
+                        "surface-dim": "#121414",
+                        "primary": "#b9c5f2",
+                        "on-secondary": "#3c2f00",
+                        "secondary": "#ffe083",
+                        "tertiary": "#ccc6b6",
+                        "on-primary-fixed": "#0b1a3d",
+                        "on-tertiary-fixed": "#1e1c12",
+                        "outline": "#8f9099",
+                        "on-primary-fixed-variant": "#39456b",
+                        "background": "#121414",
+                        "surface-tint": "#b9c5f2",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-container": "#0d1b3e",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-fixed": "#231b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "grid-gutter": "16px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "grid-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Anton"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-mono": ["Space Mono"],
+                        "cta": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "cta": ["16px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .diagonal-bg {
+            background-image: repeating-linear-gradient(105deg, #0d1b3e, #0d1b3e 100px, #1a1c1c 100px, #1a1c1c 200px);
+        }
+
+        .neumorphic-well {
+            box-shadow: inset 8px 8px 16px rgba(0,0,0,0.6), inset -8px -8px 16px rgba(255,255,255,0.05);
+        }
+
+        .clay-button {
+            box-shadow: 4px 4px 0px 0px #000;
+            transition: all 0.2s ease;
+        }
+        .clay-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+        .clay-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        .ticket-perforation {
+            background-image: radial-gradient(circle, #121414 10px, transparent 11px);
+            background-size: 30px 30px;
+            background-position: center;
+        }
+
+        @keyframes drift {
+            0% { transform: perspective(1000px) rotateX(10deg) rotateY(-5deg) rotateZ(2deg); }
+            50% { transform: perspective(1000px) rotateX(12deg) rotateY(-8deg) rotateZ(4deg); }
+            100% { transform: perspective(1000px) rotateX(10deg) rotateY(-5deg) rotateZ(2deg); }
+        }
+        .hero-poster-animation {
+            animation: drift 6s ease-in-out infinite;
+        }
+
+        .glass-blur {
+            backdrop-filter: blur(20px);
+        }
+
+        .clay-shadow {
+            filter: drop-shadow(0 10px 15px rgba(250, 204, 21, 0.3));
+        }
+
+        /* Custom Scrollbar hide */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-on-surface/10 flex justify-between items-center px-grid-margin py-md shadow-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary hover:opacity-80 transition-opacity cursor-pointer active:scale-95 duration-200">menu</span>
+<span class="font-display-xl text-display-xl text-secondary uppercase tracking-tighter">PASSWALE</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-secondary font-cta text-cta" href="#">HOME</a>
+<a class="text-on-surface hover:opacity-80 transition-opacity font-cta text-cta" href="#">EXPLORE</a>
+<a class="text-on-surface hover:opacity-80 transition-opacity font-cta text-cta" href="#">SCENE</a>
+<a class="text-on-surface hover:opacity-80 transition-opacity font-cta text-cta" href="#">SUPPORT</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary/50">
+<img alt="Profile" data-alt="A professional studio portrait of a young Indian man with a warm smile, wearing modern streetwear, set against a vibrant neon-lit backdrop that blends deep navy and cyber cyan tones. The lighting is soft but dramatic, emphasizing clear skin and high-quality photography style suitable for a premium event platform user avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9YPyA95iMjo3CQehAiI7_4BmgU_7uh7cfnEoPKXofio_KVxfL_nHBJHtZN6wOpQ5_lhuOaZ6JT8zP7qy_Vk6g2hN_2elXpPzkPrJkqFwAkHlQkkcSSQoEBPTlRp10SPOGEhlKSIQuIsJcBqFa1_8m4h2NhIqZGy5PeD4GKPyeqKc7kVNTW5t2vYKPxjiTtFGOpvDLm2RUezs5VAZUmJnNr027cVc2UOpHxJi4HBx8OJUvBcxlocdfBhdMEw8-R8k3D8LsARC2JGw"/>
+</div>
+</nav>
+<!-- Main Hero Section -->
+<section class="relative min-h-screen pt-32 pb-xl diagonal-bg overflow-hidden flex flex-col items-center justify-center">
+<!-- Floating Glass Content Container -->
+<div class="relative z-10 w-full max-w-7xl mx-auto px-grid-margin flex flex-col md:flex-row items-center justify-between gap-xl">
+<div class="flex-1 text-center md:text-left order-2 md:order-1">
+<h1 class="font-display-xl text-display-xl text-white mb-md leading-none">
+                    YOUR PASS TO<br/>
+<span class="text-secondary">EXTRAORDINARY</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-xl">
+                    Unlock the most exclusive techno bunkers, vibrant Garba grounds, and underground startup scenes with India's premier skeuomorphic ticket engine.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md justify-center md:justify-start">
+<button class="clay-button bg-secondary text-on-secondary px-xl py-md font-display-xl text-headline-md rounded-lg uppercase">
+                        GET PASS NOW
+                    </button>
+<button class="border-2 border-primary text-primary px-xl py-md font-cta text-cta rounded-lg hover:bg-primary/10 transition-colors uppercase">
+                        VIEW LINEUP
+                    </button>
+</div>
+</div>
+<!-- Hero Poster -->
+<div class="flex-1 flex justify-center order-1 md:order-2">
+<div class="hero-poster-animation w-full max-w-md aspect-[3/4] bg-primary-container rounded-2xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] border border-white/20 relative group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic low-angle shot of a high-energy Tokyo-inspired drifting music festival at night. Neon signs in Japanese characters glow in vibrant pink and cyan above a futuristic stage, while a modified drift car kicks up colored smoke in the foreground. The crowd is a sea of silhouetted hands under brilliant strobe lights, capturing a sense of kinetic energy and underground cool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1ty0O-ZpAS6VyEhu7P_wQWGCLJkNAyJcijUsHQMqGiQBBl3juifIK6g-4nO2cf5neZTndbBW_ItcpSQO40nLllBVeH4eyARAqBEu_Zg5g2kYeVW-CqtHwUUAxt6om-sE85Ct9Dg993st7d7ia4yZLvIralyqWRo6zOjdlKWIOFIY4aIqlMT8rN-tW6-ktAbssDqtIkaiecbuheSMDqMSy1hOFAkaRxDmdamUnJ_kJumQZDyiMkXPi06yajv6qKaFhcXCSTTXzmto"/>
+<div class="absolute bottom-0 w-full p-lg glass-blur bg-black/40 border-t border-white/10">
+<span class="font-label-mono text-label-mono text-secondary uppercase mb-xs block">FEATURED EVENT</span>
+<h2 class="font-headline-lg text-headline-lg text-white leading-tight">TOKYO DRIFT FESTIVAL</h2>
+<div class="flex items-center gap-sm mt-sm">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="font-label-mono text-label-mono text-white/80">SAHARA PAVILION, MUMBAI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-2">Explore Scenes</span>
+<span class="material-symbols-outlined text-secondary">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Scene Grid Section -->
+<section class="py-xl px-grid-margin bg-surface max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-xs">PICK YOUR SCENE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Curated high-octane experiences for every vibe.</p>
+</div>
+<button class="hidden md:block font-cta text-cta text-secondary border-b border-secondary pb-1">VIEW ALL SCENES</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-lg">
+<!-- Card 1: Techno -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container-high border border-white/5 hover:border-secondary/30 transition-all duration-300 p-lg text-center flex flex-col items-center shadow-lg">
+<div class="w-24 h-24 mb-md relative">
+<img alt="Techno" class="w-full h-full object-contain absolute top-0 left-0 clay-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50XukzS9VmxsXT5XA7QgCBKpUm0nCxsc6oEzc3BjacUZ6b4fYSpPNE7jAlkPUvIUaPYQzjKfXWuGQp7H4YB0xzhaNcaT5rSPBTG0lqOUcU8jTHa5DdG3Y9qrwfS1OKJQC6Wg5Dm-bL6y-3lJPeiBNMNyAbp2k4yXsvWerjCvIUNhg0imL-ehrQTVt2b3V4EUh-YJVkojxYw8ew_kb_APiteze6fjY6QCkDK5noumR5QwhWvM-ngxyWGIBdy7EFz8rmzdzF9w_G_I" style="object-position: 0 0; clip-path: inset(0 66% 66% 0);"/>
+</div>
+<h3 class="font-display-xl text-headline-md text-white mb-2 uppercase group-hover:text-secondary transition-colors">TECHNO</h3>
+<span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded-full">12 EVENTS LIVE</span>
+</div>
+<!-- Card 2: Bollywood -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container-high border border-white/5 hover:border-secondary/30 transition-all duration-300 p-lg text-center flex flex-col items-center shadow-lg">
+<div class="w-24 h-24 mb-md relative">
+<img alt="Bollywood" class="w-full h-full object-contain absolute top-0 left-0 clay-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50XukzS9VmxsXT5XA7QgCBKpUm0nCxsc6oEzc3BjacUZ6b4fYSpPNE7jAlkPUvIUaPYQzjKfXWuGQp7H4YB0xzhaNcaT5rSPBTG0lqOUcU8jTHa5DdG3Y9qrwfS1OKJQC6Wg5Dm-bL6y-3lJPeiBNMNyAbp2k4yXsvWerjCvIUNhg0imL-ehrQTVt2b3V4EUh-YJVkojxYw8ew_kb_APiteze6fjY6QCkDK5noumR5QwhWvM-ngxyWGIBdy7EFz8rmzdzF9w_G_I" style="object-position: 100% 0; clip-path: inset(0 0 66% 66%);"/>
+</div>
+<h3 class="font-display-xl text-headline-md text-white mb-2 uppercase group-hover:text-secondary transition-colors">BOLLYWOOD</h3>
+<span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded-full">45 EVENTS LIVE</span>
+</div>
+<!-- Card 3: Garba -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container-high border border-white/5 hover:border-secondary/30 transition-all duration-300 p-lg text-center flex flex-col items-center shadow-lg">
+<div class="w-24 h-24 mb-md relative">
+<img alt="Garba" class="w-full h-full object-contain absolute top-0 left-0 clay-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50XukzS9VmxsXT5XA7QgCBKpUm0nCxsc6oEzc3BjacUZ6b4fYSpPNE7jAlkPUvIUaPYQzjKfXWuGQp7H4YB0xzhaNcaT5rSPBTG0lqOUcU8jTHa5DdG3Y9qrwfS1OKJQC6Wg5Dm-bL6y-3lJPeiBNMNyAbp2k4yXsvWerjCvIUNhg0imL-ehrQTVt2b3V4EUh-YJVkojxYw8ew_kb_APiteze6fjY6QCkDK5noumR5QwhWvM-ngxyWGIBdy7EFz8rmzdzF9w_G_I" style="object-position: 50% 50%; clip-path: inset(33% 33% 33% 33%); scale: 1.5;"/>
+</div>
+<h3 class="font-display-xl text-headline-md text-white mb-2 uppercase group-hover:text-secondary transition-colors">GARBA</h3>
+<span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded-full">08 EVENTS LIVE</span>
+</div>
+<!-- Card 4: Comedy -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container-high border border-white/5 hover:border-secondary/30 transition-all duration-300 p-lg text-center flex flex-col items-center shadow-lg">
+<div class="w-24 h-24 mb-md relative">
+<img alt="Comedy" class="w-full h-full object-contain absolute top-0 left-0 clay-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50XukzS9VmxsXT5XA7QgCBKpUm0nCxsc6oEzc3BjacUZ6b4fYSpPNE7jAlkPUvIUaPYQzjKfXWuGQp7H4YB0xzhaNcaT5rSPBTG0lqOUcU8jTHa5DdG3Y9qrwfS1OKJQC6Wg5Dm-bL6y-3lJPeiBNMNyAbp2k4yXsvWerjCvIUNhg0imL-ehrQTVt2b3V4EUh-YJVkojxYw8ew_kb_APiteze6fjY6QCkDK5noumR5QwhWvM-ngxyWGIBdy7EFz8rmzdzF9w_G_I" style="object-position: 0 100%; clip-path: inset(66% 66% 0 0);"/>
+</div>
+<h3 class="font-display-xl text-headline-md text-white mb-2 uppercase group-hover:text-secondary transition-colors">COMEDY</h3>
+<span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded-full">21 EVENTS LIVE</span>
+</div>
+<!-- Card 5: Startup -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container-high border border-white/5 hover:border-secondary/30 transition-all duration-300 p-lg text-center flex flex-col items-center shadow-lg">
+<div class="w-24 h-24 mb-md relative">
+<img alt="Startup" class="w-full h-full object-contain absolute top-0 left-0 clay-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50XukzS9VmxsXT5XA7QgCBKpUm0nCxsc6oEzc3BjacUZ6b4fYSpPNE7jAlkPUvIUaPYQzjKfXWuGQp7H4YB0xzhaNcaT5rSPBTG0lqOUcU8jTHa5DdG3Y9qrwfS1OKJQC6Wg5Dm-bL6y-3lJPeiBNMNyAbp2k4yXsvWerjCvIUNhg0imL-ehrQTVt2b3V4EUh-YJVkojxYw8ew_kb_APiteze6fjY6QCkDK5noumR5QwhWvM-ngxyWGIBdy7EFz8rmzdzF9w_G_I" style="object-position: 100% 100%; clip-path: inset(66% 0 0 66%);"/>
+</div>
+<h3 class="font-display-xl text-headline-md text-white mb-2 uppercase group-hover:text-secondary transition-colors">STARTUP</h3>
+<span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded-full">05 EVENTS LIVE</span>
+</div>
+<!-- Card 6: All Access -->
+<div class="group relative overflow-hidden rounded-2xl bg-primary-container border border-primary/20 hover:border-primary/50 transition-all duration-300 p-lg text-center flex flex-col items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary text-5xl mb-sm" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<h3 class="font-display-xl text-headline-md text-primary mb-2 uppercase">ALL ACCESS</h3>
+<p class="font-label-mono text-[10px] text-on-primary-container">UNLIMITED EXPLORATION</p>
+</div>
+</div>
+</section>
+<!-- Dropping Soon Horizontal Scroll -->
+<section class="py-xl overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-grid-margin mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-white">DROPPING SOON</h2>
+</div>
+<div class="flex gap-lg overflow-x-auto no-scrollbar px-grid-margin pb-xl">
+<!-- Event Card 1 -->
+<div class="flex-none w-80 group cursor-pointer">
+<div class="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform group-hover:-translate-y-2">
+<img class="w-full h-full object-cover" data-alt="A dark and gritty close-up of a DJ's hand on a sleek, carbon-fiber turntable inside a smoky warehouse rave. Vibrant laser beams in purple and acid green cut through the atmosphere, illuminating fine dust particles and condensation. The visual style is deep-contrast, high-grain, and captures the intense raw energy of an underground techno marathon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_5DLyKsGNH5im83_W3VjwkWqJzzq-5Cb4GyGp10PyNyycdLqLyGC64iHhwPZHFp3I_iZkC0ZeVvvUVwZRTZu8DdrFfQvyrtV7NV7NDMrjbP0Rw1iGaO6euEBd_tLUs123NXZFNmR6UEvfx4AmhOWzR1F-6iXVRBqXK5towBd2oZPwkqol5VhihCtN1_0e0IgRnjXnmFcfMwx-WiH7GllSTDUME1YB8scQwLUgkM9wXmfOQN4jfQHQ7V-htUQN_AdPFIUdyv_Zfrk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-lg w-full">
+<div class="bg-secondary/20 border border-secondary/50 text-secondary font-label-mono text-[10px] w-fit px-2 py-1 rounded mb-md uppercase backdrop-blur-md">TECHNO BASTION</div>
+<h3 class="font-headline-md text-headline-md text-white mb-1">SYNTH PULSE 2024</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> OCT 24 • MUMBAI
+                        </p>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="flex-none w-80 group cursor-pointer">
+<div class="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform group-hover:-translate-y-2">
+<img class="w-full h-full object-cover" data-alt="A colorful and vibrant close-up of traditional Garba dancers in Gujarat, India. The focus is on the intricate, gold-threaded embroidery of their mirror-work attire and the rhythmic blur of their colorful wooden sticks (dandiya). Warm golden hour sunlight filters through, creating a festive, spiritual, and high-energy atmosphere with a rich cultural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKT-nUirDhSW9b3wkIdilMgz5UwKt672GpQsvwU-RTUm40V2FeOxaH2HfkSp1hnNIS6W-_5iZWsLsfNvyA-f8yBOIp0wELv_xt45g8ygFfG6UsQJBHh9GSkIT_CfY5_FVwdWmOsXRjp378VA5TFTfmBsP-PcmPo7VEaK7uNtUut-taobgcocYI_hH87jKBnCa028Yegl6UN10blajwWq9ZnE1tsVzt-dBKcyA4uSvBHZ9qt9rqpSiNTEVSYAyKqSR6kq5OZzl-WM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-lg w-full">
+<div class="bg-error-container/20 border border-error/50 text-error font-label-mono text-[10px] w-fit px-2 py-1 rounded mb-md uppercase backdrop-blur-md">CULTURAL LEGACY</div>
+<h3 class="font-headline-md text-headline-md text-white mb-1">NAV-RANG NIGHTS</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> OCT 15 • AHMEDABAD
+                        </p>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="flex-none w-80 group cursor-pointer">
+<div class="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform group-hover:-translate-y-2">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern auditorium stage for a startup pitch competition. The lighting is dominated by a deep corporate blue and futuristic cyan. A high-definition LED screen in the background displays complex data visualizations and abstract node networks. The mood is professional, high-stakes, and technologically advanced, emphasizing innovation and the digital future." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdz7YYsA8af2Y7Ew71RBtUav0qNBuwOSa3Ikihd418IpHuGMU44GaBKfSLAqbpdzcL2gcOeMu6jJcm52qZGAynwP8kIuEhMmHlV3C-vt89jH0gzB6l7vqjuCVnrMNQrZ_k_jNRm_h1ABlARmT4yTEzSLatMDYGoFgGGkgcO6TvqMiJ_YhYYvJzgjGotiYErasvbUxpJ39MORNkQj1N9N0uGO57hxsR9WbWsAVAmSTcHjLvHZQu1Bas_Gtjvjr_uu4dWM5mOYlL850"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-lg w-full">
+<div class="bg-primary/20 border border-primary/50 text-primary font-label-mono text-[10px] w-fit px-2 py-1 rounded mb-md uppercase backdrop-blur-md">VENTURE HUB</div>
+<h3 class="font-headline-md text-headline-md text-white mb-1">FOUNDER FOCUS</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> NOV 02 • BENGALURU
+                        </p>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="flex-none w-80 group cursor-pointer">
+<div class="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform group-hover:-translate-y-2">
+<img class="w-full h-full object-cover" data-alt="A spotlight illuminates a solo stand-up comedian silhouetted against a deep brick wall background. The room is dark and intimate, with swirls of light cigarette smoke caught in the single beam of light. A vintage microphone on a stand sits in the foreground, creating a classic, moody, and personal atmosphere typical of an underground comedy club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVp0PWzAYYjFQ6juu7GH9775Dp5OVrxjsGQtCqL1-c7cQDHvdjoVOT1lods7iTcoSquyTyU_hd9Tc63jOze4Hgicu_QTtEaAY0DFh_ZCb7Bylu9OilJ9GwDqs_XvsvJUeqhuZuaYiggAoP_5L9ZSglPEL_ZUBSbUDZ4mutQz9z0iiPFbKgPUVKy-5XmXRXWNY-MnGYKqwUyCR_YDjDF-sXCs0FdvIuwWq0hY9XPXhscR4KEY9LtmSoH_6hOW_MThbgrH8uJju2LK4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-lg w-full">
+<div class="bg-secondary-fixed/20 border border-secondary-fixed/50 text-secondary-fixed font-label-mono text-[10px] w-fit px-2 py-1 rounded mb-md uppercase backdrop-blur-md">LAUGH RIOT</div>
+<h3 class="font-headline-md text-headline-md text-white mb-1">UNCUT STANDUP</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> OCT 28 • DELHI
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skeuomorphic Ticket Highlight -->
+<section class="py-xl px-grid-margin diagonal-bg">
+<div class="max-w-5xl mx-auto">
+<div class="bg-secondary-fixed-dim rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.6)] flex flex-col md:flex-row relative">
+<!-- Glossy Security Strip -->
+<div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white/10 to-transparent pointer-events-none skew-x-12 transform translate-x-16"></div>
+<!-- Main Body -->
+<div class="flex-[2] p-xl relative border-r-0 md:border-r-2 border-dashed border-black/20">
+<div class="flex justify-between items-start mb-xl">
+<div class="font-display-xl text-headline-md text-black opacity-40 uppercase tracking-widest">VIP PASS</div>
+<div class="font-label-mono text-label-mono text-black font-bold">#PW-9921-XRT</div>
+</div>
+<h2 class="font-display-xl text-display-xl text-black mb-md uppercase leading-tight">PASSWALE<br/>FOUNDER CLUB</h2>
+<div class="grid grid-cols-2 gap-md mt-xl">
+<div>
+<span class="font-label-mono text-xs text-black/60 uppercase block">HOLDER</span>
+<span class="font-cta text-black text-headline-md">ROHAN SHARMA</span>
+</div>
+<div>
+<span class="font-label-mono text-xs text-black/60 uppercase block">ACCESS LEVEL</span>
+<span class="font-cta text-black text-headline-md">LEGACY ELITE</span>
+</div>
+</div>
+</div>
+<!-- Perforation Separation -->
+<div class="hidden md:flex flex-col justify-between py-xl px-xs relative z-10">
+<div class="w-8 h-8 bg-surface rounded-full -mt-10 -ml-4"></div>
+<div class="ticket-perforation h-full w-[2px]"></div>
+<div class="w-8 h-8 bg-surface rounded-full -mb-10 -ml-4"></div>
+</div>
+<!-- Stub / QR -->
+<div class="flex-1 bg-black/5 p-xl flex flex-col items-center justify-center gap-md">
+<div class="bg-white p-4 rounded-xl shadow-inner">
+<!-- Mock QR Code with dots -->
+<div class="w-32 h-32 bg-surface flex flex-wrap gap-1 p-2">
+<script>
+                                for(let i=0; i<64; i++) {
+                                    document.write(`<div class="w-3 h-3 ${Math.random() > 0.5 ? 'bg-secondary' : 'bg-surface-variant'} rounded-sm"></div>`);
+                                }
+                            </script>
+</div>
+</div>
+<button class="clay-button bg-black text-secondary px-lg py-sm font-cta text-cta rounded-full uppercase w-full">
+                        REDEEM PASS
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Neumorphic How It Works -->
+<section class="py-xl px-grid-margin">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-white text-center mb-xl">HOW PASSWALE WORKS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<!-- Step 1 -->
+<div class="neumorphic-well p-xl rounded-[40px] text-center border border-white/5 group hover:border-secondary/20 transition-all">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-lg shadow-[8px_8px_16px_rgba(0,0,0,0.5),-4px_-4px_10px_rgba(255,255,255,0.02)] group-hover:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.6)] transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-md">FIND YOUR VIBE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse exclusive categories from underground techno to high-stakes startup pitches.</p>
+</div>
+<!-- Step 2 -->
+<div class="neumorphic-well p-xl rounded-[40px] text-center border border-white/5 group hover:border-secondary/20 transition-all">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-lg shadow-[8px_8px_16px_rgba(0,0,0,0.5),-4px_-4px_10px_rgba(255,255,255,0.02)] group-hover:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.6)] transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-md">CLAIM YOUR PASS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Secure your high-texture digital pass with one-click kinetic interactions.</p>
+</div>
+<!-- Step 3 -->
+<div class="neumorphic-well p-xl rounded-[40px] text-center border border-white/5 group hover:border-secondary/20 transition-all">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-lg shadow-[8px_8px_16px_rgba(0,0,0,0.5),-4px_-4px_10px_rgba(255,255,255,0.02)] group-hover:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.6)] transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">sensor_occupied</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-md">ENTER THE SCENE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Present your skeuomorphic QR at the venue for seamless VIP verification.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-secondary relative after:content-[''] after:w-1 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-mono text-label-mono text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-mono text-label-mono text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-mono text-label-mono text-[10px]">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-mono text-label-mono text-[10px]">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 active:translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-mono text-label-mono text-[10px]">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-xl border-t border-white/5 mt-xl pb-32 md:pb-xl">
+<div class="max-w-7xl mx-auto px-grid-margin grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="col-span-1 md:col-span-2">
+<span class="font-display-xl text-headline-lg text-secondary uppercase tracking-tighter block mb-md">PASSWALE</span>
+<p class="font-body-md text-on-surface-variant max-w-sm mb-lg">
+                    The definitive gateway to high-octane experiences across the Indian subcontinent. Underground, unapologetic, and skeuomorphic.
+                </p>
+<div class="flex gap-md">
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center border border-white/10 cursor-pointer hover:bg-secondary/10 hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-on-surface">share</span>
+</div>
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center border border-white/10 cursor-pointer hover:bg-secondary/10 hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-on-surface">public</span>
+</div>
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center border border-white/10 cursor-pointer hover:bg-secondary/10 hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-on-surface">smart_display</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-cta text-cta text-white mb-lg">NAVIGATE</h4>
+<ul class="space-y-md font-body-md text-on-surface-variant">
+<li class="hover:text-secondary cursor-pointer transition-colors">LIVE EVENTS</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">MY PASSES</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">ORGANIZERS</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">SCENE MAP</li>
+</ul>
+</div>
+<div>
+<h4 class="font-cta text-cta text-white mb-lg">LEGAL</h4>
+<ul class="space-y-md font-body-md text-on-surface-variant">
+<li class="hover:text-secondary cursor-pointer transition-colors">PRIVACY POLICY</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">TERMS OF SERVICE</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">REFUND POLICY</li>
+<li class="hover:text-secondary cursor-pointer transition-colors">SUPPORT</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-grid-margin mt-xl pt-lg border-t border-white/5 text-center">
+<span class="font-label-mono text-[12px] text-on-surface-variant">© 2024 PASSWALE TECHNOLOGIES. BUILT FOR THE BOLD.</span>
+</div>
+</footer>
+<script>
+        // Micro-interactions and atmospheric parallax
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            const posters = document.querySelectorAll('.hero-poster-animation');
+            posters.forEach(poster => {
+                poster.style.transform = `perspective(1000px) rotateX(${10 + moveY}deg) rotateY(${-5 + moveX}deg) rotateZ(2deg)`;
+            });
+        });
+
+        // Scene cards hover scale logic
+        const sceneCards = document.querySelectorAll('.group');
+        sceneCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.clay-shadow');
+                if (icon) icon.style.transform = 'scale(1.1) translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.clay-shadow');
+                if (icon) icon.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Passwale | My Passes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#5d5f5f",
+                        "on-surface": "#1f1b12",
+                        "surface": "#fff8f0",
+                        "primary": "#735c00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#111c2d",
+                        "inverse-on-surface": "#f8f0e1",
+                        "surface-dim": "#e1d9cb",
+                        "inverse-surface": "#343026",
+                        "surface-container": "#f5edde",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#eae2d3",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#d5e0f8",
+                        "surface-container-low": "#fbf3e4",
+                        "surface-container-highest": "#eae2d3",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#4d4635",
+                        "inverse-primary": "#eac33e",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "outline-variant": "#d0c6ae",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#eac33e",
+                        "on-secondary-container": "#586377",
+                        "surface-container-high": "#f0e7d9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-tint": "#735c00",
+                        "surface-bright": "#fff8f0",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary-container": "#fcd34d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#d6d7d7",
+                        "on-secondary": "#ffffff",
+                        "outline": "#7f7662",
+                        "on-primary-container": "#715b00",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f0",
+                        "on-tertiary-container": "#5c5d5e",
+                        "primary-fixed": "#ffe086",
+                        "on-background": "#1f1b12",
+                        "secondary": "#545f73",
+                        "on-primary-fixed": "#231b00",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary-fixed-dim": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-bold": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #1f1b12;
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px #1f1b12;
+        }
+        .neo-active:active {
+            box-shadow: 0px 0px 0px 0px #1f1b12;
+            transform: translate(4px, 4px);
+        }
+        .tab-active {
+            background-color: #fcd34d;
+            border-color: #1f1b12;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 flex justify-between items-center px-gutter py-base bg-surface dark:bg-inverse-surface border-b-2 border-on-surface dark:border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-primary-container p-2 transition-colors active:translate-x-0.5 active:translate-y-0.5">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-black text-primary dark:text-primary-fixed tracking-tighter italic uppercase">PASSWALE</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary hover:bg-primary-container p-2 transition-colors active:translate-x-0.5 active:translate-y-0.5">search</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-md pb-32">
+<!-- Page Title -->
+<div class="mb-lg">
+<h2 class="font-display-lg text-display-lg uppercase italic mb-md">MY PASSES</h2>
+<!-- Filter Toggle -->
+<div class="flex p-1 bg-surface border-2 border-on-surface w-fit neo-shadow">
+<button class="px-md py-base font-label-bold text-label-bold uppercase transition-all tab-active border-2 border-transparent" id="upcoming-btn" onclick="switchTab('upcoming')">
+                    UPCOMING
+                </button>
+<button class="px-md py-base font-label-bold text-label-bold uppercase transition-all border-2 border-transparent" id="history-btn" onclick="switchTab('history')">
+                    HISTORY
+                </button>
+</div>
+</div>
+<!-- Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md" id="passes-grid">
+<!-- Upcoming Card 1 -->
+<div class="pass-card upcoming group bg-surface-container-lowest border-2 border-on-surface neo-shadow hover:neo-shadow-lg transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 border-b-2 border-on-surface">
+<img alt="Neon Underground Event" class="w-full h-full object-cover" data-alt="A cinematic low-angle shot of a high-energy nightclub interior filled with vibrant pink and blue neon lights. Silhouetted figures dance in front of a massive LED screen displaying abstract geometric visuals. The atmosphere is dense, urban, and electric, featuring a neo-brutalist aesthetic with harsh contrasts and deep shadows typical of modern youth culture events." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuT7m5MMQkAod156tz470qFBAU07JUh67SCqe7E2EeZ7xjst47Z4JnJ01XNZEI9hUWX1j9_D7rDQPJRii54sxVcCeT41iffB1IIUsKxoKPPIEAF7H2eQakM4XLzSkZKiX0qitgiajNwAn3nnsP0Uvi34Mz9A9L2VK2MJZLWS39b5KjUa96Xc5Z1Q3XiYHResvUm73Pr_MOnhLaK165De95EeY8cosqsze6snCzZ80r-EsALWTDdYpcCbLIb80bByuRKxRiS6Fq7KII"/>
+<div class="absolute top-4 left-4 bg-primary-container border-2 border-on-surface px-base py-xs font-label-bold text-label-bold uppercase">
+                        UPCOMING
+                    </div>
+</div>
+<div class="p-md flex-grow">
+<p class="font-caption text-caption text-primary uppercase mb-1">FRI, 24 OCT • 10:00 PM</p>
+<h3 class="font-headline-md text-headline-md uppercase mb-base">NEON UNDERGROUND: VOL 4</h3>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-on-surface-variant font-label-bold text-label-bold">DISTRICT 7, MUMBAI</span>
+</div>
+</div>
+<div class="p-md pt-0">
+<button class="w-full bg-primary-container text-on-surface border-2 border-on-surface py-base font-label-bold text-label-bold uppercase neo-shadow neo-active active:shadow-none">
+                        VIEW PASS
+                    </button>
+</div>
+</div>
+<!-- Upcoming Card 2 -->
+<div class="pass-card upcoming group bg-surface-container-lowest border-2 border-on-surface neo-shadow hover:neo-shadow-lg transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 border-b-2 border-on-surface">
+<img alt="Warehouse Session" class="w-full h-full object-cover" data-alt="A gritty warehouse music festival scene at dusk with high-contrast stage lighting casting long shadows across the crowd. Beams of amber and deep violet light cut through a light haze, illuminating a futuristic DJ booth built from industrial scaffolding. The visual style is raw and unapologetic, capturing the essence of underground techno culture with a sophisticated color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1CaR-do_w7pK4pGfDeeKZiX27EquOq_eFGQIp47nmBPo44ddkKgJSeNSwSorYSP8sWlH-d1eQnADuIeZQPWsj1ktSJzrQoxkHMvjMeqf7FSyXnBXtTRA-KhopQvHV_tmwe6-Ri1Z1OV0FJc7nadLzmUWY9pmzH7tGQYq7am7L-gBLfxPp-1swk7Rw47xW749WMJ6wXt6r7o1EGyd_CypjDIn4Lp6Z8_uXdbo3B9xNZQd4GDjey9QXMddNztICGeDzTdElrWkGWa25"/>
+<div class="absolute top-4 left-4 bg-primary-container border-2 border-on-surface px-base py-xs font-label-bold text-label-bold uppercase">
+                        UPCOMING
+                    </div>
+</div>
+<div class="p-md flex-grow">
+<p class="font-caption text-caption text-primary uppercase mb-1">SAT, 01 NOV • 09:00 PM</p>
+<h3 class="font-headline-md text-headline-md uppercase mb-base">THE WAREHOUSE SESSIONS</h3>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-on-surface-variant font-label-bold text-label-bold">SECTOR 12, GURUGRAM</span>
+</div>
+</div>
+<div class="p-md pt-0">
+<button class="w-full bg-primary-container text-on-surface border-2 border-on-surface py-base font-label-bold text-label-bold uppercase neo-shadow neo-active active:shadow-none">
+                        VIEW PASS
+                    </button>
+</div>
+</div>
+<!-- History Card 1 (Initially Hidden) -->
+<div class="pass-card history hidden group bg-surface-container-low border-2 border-on-surface neo-shadow opacity-80 grayscale-[0.5] hover:grayscale-0 transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 border-b-2 border-on-surface">
+<img alt="Past Techno Event" class="w-full h-full object-cover" data-alt="An energetic concert photography shot from within the crowd, looking up at a stage flooded with intense strobe lights and colorful lasers. Hands are raised in the air against a dark, atmospheric backdrop. The lighting is dominated by vivid yellows and deep navies, reflecting a high-octane nightlife experience. The composition is dynamic and full of motion blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2w12wf6nlXEim3oy1DajKPRIXqEXx53xEOjos_fx_Bi_xcs0yPGwIlJkZQlhJaYOK6ry_vqRVljCUhLuR6cmwI67L8r4udapb1r2cYQx1ycooInZ34N1nNnb69HEQ3yuzWCngUGPbq4BcjnG9itHLomdh1g_LB-h8NHuvDV_0YBmCm5R8qepT7e2DMIhW9JODjYQxnKdmGrdIEgu_v5ejaH7gfZo7tE6jM7kmftEMgvbT0y-YEBUD5ob57PjY-1wv52ltVyys7zsz"/>
+<div class="absolute top-4 left-4 bg-surface border-2 border-on-surface px-base py-xs font-label-bold text-label-bold uppercase">
+                        CHECKED IN
+                    </div>
+</div>
+<div class="p-md flex-grow">
+<p class="font-caption text-caption text-on-surface-variant uppercase mb-1">05 OCT 2023</p>
+<h3 class="font-headline-md text-headline-md uppercase mb-base">TECHNO TAKEOVER</h3>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-on-surface-variant font-label-bold text-label-bold">ANTI-SOCIAL, PUNE</span>
+</div>
+</div>
+<div class="p-md pt-0">
+<button class="w-full bg-surface text-on-surface border-2 border-on-surface py-base font-label-bold text-label-bold uppercase neo-shadow neo-active active:shadow-none">
+                        ORDER DETAILS
+                    </button>
+</div>
+</div>
+<!-- History Card 2 (Initially Hidden) -->
+<div class="pass-card history hidden group bg-surface-container-low border-2 border-on-surface neo-shadow opacity-80 grayscale-[0.5] hover:grayscale-0 transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 border-b-2 border-on-surface">
+<img alt="Past Bass Night" class="w-full h-full object-cover" data-alt="A wide-angle shot of a massive outdoor electronic music festival stage at night. Multiple giant screens show colorful glitch art while pyrotechnics burst from the sides. The foreground shows a sea of festival-goers silhouetted against the bright, high-impact light show. The aesthetic is loud, energetic, and urban, capturing a premium musical event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnHuiRL_Oj8bQHFU1qeDpCBTERt4ogq1Udp86nZ7zLe6i4HzUDVU5maHwZM9y3OCgvRCNXghIWZsdoJ19EB-4m9PbxkNf5WWbjwk9jPJCfuWyOSQbmd77iYs_1-rfC0hC5bpA-8dhQQ51dlmiz-iOebNEa-l_sWA3PvBt-4gsE2y7Wmx7Nay3GeiVVUjlYQwiJs6eESp3G22-2BezG1Q5l5EfWoDDcpq0xs8Kp8fR_F9gn7Z2CHYF7HwOE3B1cTCp5kKM-r0ogilUY"/>
+<div class="absolute top-4 left-4 bg-surface border-2 border-on-surface px-base py-xs font-label-bold text-label-bold uppercase">
+                        EXPIRED
+                    </div>
+</div>
+<div class="p-md flex-grow">
+<p class="font-caption text-caption text-on-surface-variant uppercase mb-1">20 SEP 2023</p>
+<h3 class="font-headline-md text-headline-md uppercase mb-base">BASS NIGHT: REWIND</h3>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-on-surface-variant font-label-bold text-label-bold">HIVE, BENGALURU</span>
+</div>
+</div>
+<div class="p-md pt-0">
+<button class="w-full bg-surface text-on-surface border-2 border-on-surface py-base font-label-bold text-label-bold uppercase neo-shadow neo-active active:shadow-none">
+                        ORDER DETAILS
+                    </button>
+</div>
+</div>
+</div>
+<!-- Empty State (Placeholder) -->
+<div class="hidden flex-col items-center justify-center py-xl text-center" id="empty-state">
+<span class="material-symbols-outlined text-[64px] mb-md opacity-30">confirmation_number</span>
+<p class="font-headline-md text-headline-md uppercase opacity-50 mb-base">NO PASSES FOUND</p>
+<button class="bg-primary-container text-on-surface border-2 border-on-surface px-md py-base font-label-bold text-label-bold uppercase neo-shadow neo-active">
+                EXPLORE EVENTS
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 bg-surface dark:bg-inverse-surface h-20 border-t-2 border-on-surface dark:border-outline-variant z-50">
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-inverse-on-surface opacity-70 hover:opacity-100 transition-opacity active:translate-x-1 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-bold text-label-bold uppercase">EXPLORE</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed border-2 border-on-surface dark:border-on-surface px-4 py-1 rounded-none shadow-[4px_4px_0px_0px_#1f1b12] active:shadow-none active:translate-x-1 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-bold text-label-bold uppercase">MY PASSES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-inverse-on-surface opacity-70 hover:opacity-100 transition-opacity active:translate-x-1 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-bold text-label-bold uppercase">PROFILE</span>
+</a>
+</nav>
+<script>
+        function switchTab(type) {
+            const upcomingBtn = document.getElementById('upcoming-btn');
+            const historyBtn = document.getElementById('history-btn');
+            const upcomingCards = document.querySelectorAll('.pass-card.upcoming');
+            const historyCards = document.querySelectorAll('.pass-card.history');
+            const emptyState = document.getElementById('empty-state');
+
+            if (type === 'upcoming') {
+                upcomingBtn.classList.add('tab-active');
+                historyBtn.classList.remove('tab-active');
+                
+                upcomingCards.forEach(card => card.classList.remove('hidden'));
+                historyCards.forEach(card => card.classList.add('hidden'));
+                
+                if (upcomingCards.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    emptyState.classList.add('flex');
+                } else {
+                    emptyState.classList.add('hidden');
+                }
+            } else {
+                historyBtn.classList.add('tab-active');
+                upcomingBtn.classList.remove('tab-active');
+                
+                upcomingCards.forEach(card => card.classList.add('hidden'));
+                historyCards.forEach(card => card.classList.remove('hidden'));
+                
+                if (historyCards.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    emptyState.classList.add('flex');
+                } else {
+                    emptyState.classList.add('hidden');
+                }
+            }
+        }
+
+        // Initialize micro-interactions
+        document.querySelectorAll('.neo-active').forEach(button => {
+            button.addEventListener('mousedown', function() {
+                this.classList.add('shadow-none', 'translate-x-1', 'translate-y-1');
+            });
+            button.addEventListener('mouseup', function() {
+                this.classList.remove('shadow-none', 'translate-x-1', 'translate-y-1');
+            });
+            button.addEventListener('mouseleave', function() {
+                this.classList.remove('shadow-none', 'translate-x-1', 'translate-y-1');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Passwale | Organizer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fb;
+            background-image: radial-gradient(#dfe2f3 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neo-brutalist-card {
+            border: 2px solid #040711;
+            box-shadow: 4px 4px 0px 0px #040711;
+            transition: all 0.1s ease-in-out;
+        }
+        .neo-brutalist-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #040711;
+        }
+        .neo-brutalist-button-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #040711;
+        }
+        .sidebar-item-active {
+            background-color: #fcd34d;
+            color: #040711;
+            border: 2px solid #040711;
+            box-shadow: 4px 4px 0px 0px #040711;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8f9fb;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #040711;
+            border-radius: 0px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#040711",
+                        "on-primary-container": "#838695",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f8f9fb",
+                        "background": "#f8f9fb",
+                        "secondary-fixed-dim": "#eac33e",
+                        "surface-container-highest": "#e1e2e4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fb",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#231b00",
+                        "outline-variant": "#c7c6cc",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#dfe2f3",
+                        "inverse-surface": "#2e3132",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#5a5e6c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e7e8ea",
+                        "on-primary-fixed-variant": "#434654",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "on-tertiary-container": "#868788",
+                        "on-primary-fixed": "#171b27",
+                        "on-secondary-container": "#725b00",
+                        "secondary-container": "#fcd34d",
+                        "surface-container-low": "#f3f4f6",
+                        "primary-container": "#1b1f2b",
+                        "outline": "#76777c",
+                        "primary-fixed-dim": "#c3c6d6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#edeef0",
+                        "on-surface": "#191c1e",
+                        "surface-variant": "#e1e2e4",
+                        "tertiary": "#060808",
+                        "tertiary-container": "#1e2020",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-surface-variant": "#46464c",
+                        "secondary-fixed": "#ffe086",
+                        "inverse-primary": "#c3c6d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "lg": "48px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-bold": ["Montserrat"],
+                        "label-sm": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex">
+<!-- Navigation Drawer (SideNav) -->
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 z-40 bg-surface border-r-4 border-primary w-80 shadow-[8px_0px_0px_0px_rgba(4,7,17,1)]">
+<div class="p-8">
+<h1 class="font-display-lg text-headline-md text-primary tracking-tighter uppercase">PASSWALE</h1>
+</div>
+<div class="px-6 py-4 flex items-center gap-4 mb-8">
+<div class="w-12 h-12 border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young, stylish event organizer wearing a sleek black blazer. The lighting is high-contrast and dramatic, emphasizing sharp features against a minimalist industrial background. The overall aesthetic is clean, authoritative, and perfectly aligned with a premium neo-brutalist brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLHZo3KYLF_MzA9s7thp4oeAIubyXBZCXLeR6YTQiIac58mqcQrSBEiHZspUYQQr41e9JWbM3IDevdW4imfMNW8u7YerlGGA-LbgAMyE8x7GFRwsuEF8epynWcGU1CKiSDcKOViFrz1AmtHQrnDPVBfR5abzY9k6xCY3B_BbNtoRWZoq8unhXqD8505M5FGkh6PEFiis0w6BT21N2zvHymqVp8NveOAKmsqzMT0kq0Cfw62CWchBDG6yFZVNT4dVehFtjPdVNW9Ibn"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-primary">Passholder #001</p>
+<p class="text-xs font-semibold text-on-primary-container">Vibe Architect</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2 px-4">
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold sidebar-item-active" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span>Scenes</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+<span>Drops</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Squads</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Payouts</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 transition-all duration-100 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span>Vault</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 border-2 border-primary bg-secondary-container font-bold text-primary shadow-[4px_4px_0px_0px_rgba(4,7,17,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                + CREATE DROP
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-80 min-h-screen">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-30 w-full bg-background border-b-4 border-primary shadow-[4px_4px_0px_0px_rgba(4,7,17,1)] flex justify-between items-center px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+<h2 class="font-headline-md text-headline-md text-primary">Organizer Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-4 py-2 bg-primary-fixed border-2 border-primary font-label-bold text-label-bold">
+<span class="material-symbols-outlined text-sm" data-icon="sync" style="font-variation-settings: 'FILL' 1;">sync</span>
+                    LIVE SYNCING
+                </div>
+<div class="w-10 h-10 border-2 border-primary rounded-full bg-secondary-container flex items-center justify-center font-bold">
+                    JD
+                </div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin-desktop space-y-gutter">
+<!-- Growth Funnel Stats (Bento Grid) -->
+<section class="grid grid-cols-12 gap-gutter">
+<!-- Main Reels-Native Funnel Chart -->
+<div class="col-span-12 lg:col-span-8 neo-brutalist-card bg-white p-6 relative overflow-hidden">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Reels-Native Growth Funnel</h3>
+<p class="text-on-primary-container font-medium">Tracking high-intent traffic from IG Reels &amp; Stories</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container border-2 border-primary text-xs font-bold">LAST 24H</span>
+<span class="px-3 py-1 bg-primary text-white border-2 border-primary text-xs font-bold">LIVE</span>
+</div>
+</div>
+<div class="h-64 w-full flex items-end justify-between gap-2 px-2">
+<!-- Simulated Bar Chart -->
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[40%] hover:bg-secondary-container transition-colors group relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-bold text-xs opacity-0 group-hover:opacity-100">12k</span>
+</div>
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[65%] hover:bg-secondary-container transition-colors group relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-bold text-xs opacity-0 group-hover:opacity-100">18k</span>
+</div>
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[50%] hover:bg-secondary-container transition-colors group relative"></div>
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[85%] hover:bg-secondary-container transition-colors group relative"></div>
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[70%] hover:bg-secondary-container transition-colors group relative"></div>
+<div class="flex-1 bg-secondary-container border-2 border-primary h-[95%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 font-bold text-xs">24.2k</span>
+</div>
+<div class="flex-1 bg-primary-fixed border-2 border-primary h-[45%] hover:bg-secondary-container transition-colors group relative"></div>
+</div>
+<div class="flex justify-between mt-4 text-xs font-bold text-primary uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span class="text-secondary">Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Conversion Pulse -->
+<div class="col-span-12 lg:col-span-4 neo-brutalist-card bg-primary text-white p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-3 h-3 bg-error rounded-full animate-pulse"></span>
+<span class="text-xs font-bold tracking-widest uppercase">Direct Conversion</span>
+</div>
+<h4 class="text-5xl font-black mb-1">12.4%</h4>
+<p class="text-on-primary-container text-sm font-semibold">From IG Stickers to Checkout</p>
+</div>
+<div class="mt-8 pt-8 border-t-2 border-on-primary-container/30">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs uppercase font-bold text-secondary-fixed">Revenue Goal</p>
+<p class="text-2xl font-bold">$42,000 / $50k</p>
+</div>
+<div class="w-16 h-16 border-4 border-secondary-container rounded-full flex items-center justify-center font-black text-xl">
+                                84%
+                            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Middle Row: Squad-Lock & Payments -->
+<section class="grid grid-cols-12 gap-gutter">
+<!-- Squad-Lock Management -->
+<div class="col-span-12 lg:col-span-7 neo-brutalist-card bg-white overflow-hidden">
+<div class="p-6 border-b-2 border-primary bg-primary-fixed">
+<h3 class="font-headline-md text-headline-md text-primary uppercase flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="group_work">group_work</span>
+                            Squad-Lock Status
+                        </h3>
+</div>
+<div class="p-0">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b-2 border-primary">
+<th class="px-6 py-4 font-label-bold text-label-bold uppercase">Squad Name</th>
+<th class="px-6 py-4 font-label-bold text-label-bold uppercase">Lock Ratio</th>
+<th class="px-6 py-4 font-label-bold text-label-bold uppercase">Status</th>
+<th class="px-6 py-4 font-label-bold text-label-bold uppercase">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-2 divide-surface-container-highest">
+<tr class="hover:bg-secondary-container/10 transition-colors">
+<td class="px-6 py-4">
+<div class="font-bold">Midnight Rebels</div>
+<div class="text-xs text-on-primary-container">ID: #SQD-902</div>
+</td>
+<td class="px-6 py-4">
+<div class="w-full bg-surface-dim h-2 border border-primary">
+<div class="bg-primary h-full" style="width: 100%"></div>
+</div>
+<span class="text-xs font-bold">10/10 LOCKED</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-800 border border-green-800 text-[10px] font-bold uppercase">Confirmed</span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-primary" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-secondary-container/10 transition-colors">
+<td class="px-6 py-4">
+<div class="font-bold">Cyber Punx</div>
+<div class="text-xs text-on-primary-container">ID: #SQD-441</div>
+</td>
+<td class="px-6 py-4">
+<div class="w-full bg-surface-dim h-2 border border-primary">
+<div class="bg-primary h-full" style="width: 70%"></div>
+</div>
+<span class="text-xs font-bold">7/10 PENDING</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-yellow-100 text-yellow-800 border border-yellow-800 text-[10px] font-bold uppercase">Awaiting</span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-primary" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-secondary-container/10 transition-colors">
+<td class="px-6 py-4">
+<div class="font-bold">Vibe Curators</div>
+<div class="text-xs text-on-primary-container">ID: #SQD-112</div>
+</td>
+<td class="px-6 py-4">
+<div class="w-full bg-surface-dim h-2 border border-primary">
+<div class="bg-primary h-full" style="width: 20%"></div>
+</div>
+<span class="text-xs font-bold">2/10 FORMING</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container-highest border border-primary text-[10px] font-bold uppercase">Open</span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-primary" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Payment Processing -->
+<div class="col-span-12 lg:col-span-5 neo-brutalist-card bg-secondary-container p-6 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Payment Processing</h3>
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="space-y-4 flex-1">
+<div class="bg-white border-2 border-primary p-4 shadow-[4px_4px_0px_0px_rgba(4,7,17,1)]">
+<p class="text-xs font-bold text-on-primary-container uppercase">Pending Settlement</p>
+<p class="text-3xl font-black text-primary">$12,840.00</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary text-white border-2 border-primary p-4">
+<p class="text-[10px] font-bold uppercase text-secondary-fixed">Processed (24h)</p>
+<p class="text-xl font-bold">$4,200</p>
+</div>
+<div class="bg-white border-2 border-primary p-4">
+<p class="text-[10px] font-bold uppercase text-on-primary-container">Success Rate</p>
+<p class="text-xl font-bold">99.8%</p>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full py-4 border-2 border-primary bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90 transition-all active:translate-x-1 active:translate-y-1 active:shadow-none shadow-[4px_4px_0px_0px_rgba(4,7,17,1)]">
+                        Initiate Payout
+                    </button>
+</div>
+</section>
+<!-- Bottom Row: Recent Drops & Quick Insights -->
+<section class="grid grid-cols-12 gap-gutter pb-margin-desktop">
+<!-- Quick Insights -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="neo-brutalist-card bg-white p-6 border-l-[12px] border-l-secondary-container">
+<p class="font-label-bold text-label-bold text-primary uppercase mb-2">Top Referral Source</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white text-2xl">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</div>
+<div>
+<h5 class="font-bold">IG Reels: "Friday Glow"</h5>
+<p class="text-xs text-on-primary-container">4,203 sessions today</p>
+</div>
+</div>
+</div>
+<div class="neo-brutalist-card bg-white p-6 border-l-[12px] border-l-primary">
+<p class="font-label-bold text-label-bold text-primary uppercase mb-2">Waitlist velocity</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container border-2 border-primary flex items-center justify-center text-primary text-2xl">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h5 class="font-bold">+120 souls / hour</h5>
+<p class="text-xs text-on-primary-container">24% increase from average</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Drop Overview -->
+<div class="col-span-12 lg:col-span-8 neo-brutalist-card bg-white relative overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/3 bg-primary overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="A high-energy, wide-angle photograph of a crowded, neon-lit underground warehouse party. The scene is filled with vibrant streaks of pink and blue laser light, capturing the motion and excitement of a futuristic event. The photography is sharp and cinematic, perfectly embodying the energetic, kinetic vibe of a modern nightlife experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmX2LsbhuNBIb15X4pa9jAWmJcR1l1CTgIsiWj8HIqN0IC7zNpLa_o9R7bBMl-sKVQ76fCi2d0a1SstIpHtg6nnf4qYA42TWvX4Vy0_HPwBIcY0laypv9ng_1eZ4LGZF7F0Hua3GCl2T7_x4hG8sBohCF2t-GOHbTfpcDC8trJ9vKXWit_M7d8IUhAVKTzVeBFA1H_dl5R1yyfaxsFIwD1VqtwwliLpJ_OGd7VQQi6svlSrfPoU2IvtrNlLh5KCp5Z0-iPqpc4IzTd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-container text-primary font-black px-3 py-1 text-xs border border-primary">LIVE NOW</span>
+<h4 class="text-white font-black text-xl mt-2">NEON VOID // 004</h4>
+</div>
+</div>
+<div class="md:w-2/3 p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-on-primary-container uppercase tracking-widest">Drop Performance</p>
+<h5 class="text-3xl font-black text-primary">648 / 1000 SOLD</h5>
+</div>
+<button class="p-3 border-2 border-primary hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-sm font-bold uppercase">
+<span>General Admission</span>
+<span>420 Left</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border-2 border-primary">
+<div class="h-full bg-secondary-container border-r-2 border-primary" style="width: 58%"></div>
+</div>
+<div class="flex justify-between text-sm font-bold uppercase">
+<span>Squad VIP Pass</span>
+<span>22 Left</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border-2 border-primary">
+<div class="h-full bg-primary border-r-2 border-primary" style="width: 89%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="flex-1 py-3 border-2 border-primary bg-white font-bold text-sm uppercase shadow-[4px_4px_0px_0px_rgba(4,7,17,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                                View Attendees
+                            </button>
+<button class="flex-1 py-3 border-2 border-primary bg-primary text-white font-bold text-sm uppercase shadow-[4px_4px_0px_0px_rgba(4,7,17,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                                Live Broadcast
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action for Quick Add -->
+<button class="fixed bottom-10 right-10 w-20 h-20 bg-primary text-white border-4 border-secondary-container shadow-[8px_8px_0px_0px_rgba(252,211,77,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all flex items-center justify-center z-50">
+<span class="material-symbols-outlined text-4xl" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+</button>
+<script>
+        // Simple UI Interaction logic
+        document.querySelectorAll('.active\\:translate-x-1').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('shadow-none');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('shadow-none');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('shadow-none');
+            });
+        });
+
+        // Hover animations for the bento grid bars
+        const bars = document.querySelectorAll('.group.relative');
+        bars.forEach(bar => {
+            bar.addEventListener('mouseenter', () => {
+                bar.style.transform = 'scaleY(1.05)';
+            });
+            bar.addEventListener('mouseleave', () => {
+                bar.style.transform = 'scaleY(1)';
+            });
+        });
+    </script>
+</body></html>
